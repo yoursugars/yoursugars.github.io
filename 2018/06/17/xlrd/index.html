@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yoursugars.github.io">
-  <title>xlrd | A Palace For Sugar</title>
+  <title>xlrd与xlwt | A Palace For Sugar</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="import xlrd import xlwt data = xlrd.open_workbook(r&apos;D:\software\python\sugar.xlsx&apos;) table = data.sheets()[0] nrows = table.nrows#行数 ncols = table.ncols#列数  for i in range(0,nrows):      rowValues = ta">
+  <meta name="description" content="关于python中的xlrd和xlwt两个关于excel读写的库hummm~主要是想到以后数模可能用python处理数据! 库名:12import xlrdimport xlwt 下载地址: [read]: https://pypi.org/project/xlrd/ (xlrd) [write]: https://pypi.org/project/xlwt/ (xlwt)">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="xlrd">
+<meta property="og:title" content="xlrd与xlwt">
 <meta property="og:url" content="https://yoursugars.github.io/2018/06/17/xlrd/index.html">
 <meta property="og:site_name" content="A Palace For Sugar">
-<meta property="og:description" content="import xlrd import xlwt data = xlrd.open_workbook(r&apos;D:\software\python\sugar.xlsx&apos;) table = data.sheets()[0] nrows = table.nrows#行数 ncols = table.ncols#列数  for i in range(0,nrows):      rowValues = ta">
+<meta property="og:description" content="关于python中的xlrd和xlwt两个关于excel读写的库hummm~主要是想到以后数模可能用python处理数据! 库名:12import xlrdimport xlwt 下载地址: [read]: https://pypi.org/project/xlrd/ (xlrd) [write]: https://pypi.org/project/xlwt/ (xlwt)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-17T03:39:09.507Z">
+<meta property="og:updated_time" content="2018-06-17T07:04:37.057Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="xlrd">
-<meta name="twitter:description" content="import xlrd import xlwt data = xlrd.open_workbook(r&apos;D:\software\python\sugar.xlsx&apos;) table = data.sheets()[0] nrows = table.nrows#行数 ncols = table.ncols#列数  for i in range(0,nrows):      rowValues = ta">
+<meta name="twitter:title" content="xlrd与xlwt">
+<meta name="twitter:description" content="关于python中的xlrd和xlwt两个关于excel读写的库hummm~主要是想到以后数模可能用python处理数据! 库名:12import xlrdimport xlwt 下载地址: [read]: https://pypi.org/project/xlrd/ (xlrd) [write]: https://pypi.org/project/xlwt/ (xlwt)">
   
     <link rel="alternative" href="/atom.xml" title="A Palace For Sugar" type="application/atom+xml">
   
@@ -166,7 +166,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      xlrd
+      xlrd与xlwt
     </h1>
   
 
@@ -182,48 +182,11 @@
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <pre><code class="python"><span class="keyword">import</span> xlrd
-<span class="keyword">import</span> xlwt
-data = xlrd.open_workbook(<span class="string">r'D:\software\python\sugar.xlsx'</span>)
-table = data.sheets()[<span class="number">0</span>]
-nrows = table.nrows<span class="comment">#行数</span>
-ncols = table.ncols<span class="comment">#列数</span>
-
-<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,nrows): 
-    rowValues = table.row_values(i)
-    <span class="keyword">for</span> item <span class="keyword">in</span> rowValues:
-        <span class="keyword">print</span> (item, end = <span class="string">" "</span>)<span class="comment">#读</span>
-    <span class="keyword">print</span> ()
-
-file = xlwt.Workbook()
-sheet1 = file.add_sheet(<span class="string">'sheet1'</span>, cell_overwrite_ok = <span class="keyword">True</span>)
-
-<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, nrows):
-    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>, ncols):
-        sheet1.write(i,j,table.cell(i,j).value)<span class="comment">#写入</span>
-file.save(<span class="string">'demo2.xlsx'</span>) <span class="comment">#save时有重复的不能覆盖</span>
-
-<span class="comment">#官方</span>
-<span class="keyword">import</span> xlwt
-<span class="keyword">from</span> datetime <span class="keyword">import</span> datetime
-
-style0 = xlwt.easyxf(<span class="string">'font: name Times New Roman, color-index red, bold on'</span>,
-    num_format_str=<span class="string">'#,##0.00'</span>)
-style1 = xlwt.easyxf(num_format_str=<span class="string">'D-MMM-YY'</span>)
-
-wb = xlwt.Workbook()
-ws = wb.add_sheet(<span class="string">'A Test Sheet'</span>)
-
-ws.write(<span class="number">0</span>, <span class="number">0</span>, <span class="number">1234.56</span>, style0)
-ws.write(<span class="number">1</span>, <span class="number">0</span>, datetime.now(), style1)
-ws.write(<span class="number">2</span>, <span class="number">0</span>, <span class="number">1</span>)
-ws.write(<span class="number">2</span>, <span class="number">1</span>, <span class="number">1</span>)
-ws.write(<span class="number">2</span>, <span class="number">2</span>, xlwt.Formula(<span class="string">"A3+B3"</span>))
-
-wb.save(<span class="string">'example.xls'</span>)
-
-</code></pre>
-
+        <p>关于python中的xlrd和xlwt两个关于excel读写的库<br>hummm~主要是想到以后数模可能用python处理数据!</p>
+<p><em>库名:</em><br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> xlrd</span><br><span class="line"><span class="keyword">import</span> xlwt</span><br></pre></td></tr></table></figure></p>
+<p><em>下载地址:</em><br> [read]: <a href="https://pypi.org/project/xlrd/" target="_blank" rel="noopener">https://pypi.org/project/xlrd/</a> (xlrd)<br> [write]: <a href="https://pypi.org/project/xlwt/" target="_blank" rel="noopener">https://pypi.org/project/xlwt/</a> (xlwt)</p>
+<a id="more"></a>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> xlrd</span><br><span class="line"><span class="keyword">import</span> xlwt</span><br><span class="line">data = xlrd.open_workbook(<span class="string">r'D:\software\python\sugar.xlsx'</span>)</span><br><span class="line">table = data.sheets()[<span class="number">0</span>]</span><br><span class="line">nrows = table.nrows<span class="comment">#行数</span></span><br><span class="line">ncols = table.ncols<span class="comment">#列数</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,nrows): </span><br><span class="line">	rowValues = table.row_values(i)</span><br><span class="line">	<span class="keyword">for</span> item <span class="keyword">in</span> rowValues:</span><br><span class="line">		<span class="keyword">print</span> (item, end = <span class="string">" "</span>)<span class="comment">#读</span></span><br><span class="line">	<span class="keyword">print</span> ()</span><br><span class="line"></span><br><span class="line">file = xlwt.Workbook()</span><br><span class="line">sheet1 = file.add_sheet(<span class="string">'sheet1'</span>, cell_overwrite_ok = <span class="keyword">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, nrows):</span><br><span class="line">	<span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>, ncols):</span><br><span class="line">		sheet1.write(i,j,table.cell(i,j).value)<span class="comment">#写入</span></span><br><span class="line">file.save(<span class="string">'demo2.xlsx'</span>) <span class="comment">#save时有重复的不能覆盖</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#官方</span></span><br><span class="line"><span class="keyword">import</span> xlwt</span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line">style0 = xlwt.easyxf(<span class="string">'font: name Times New Roman, color-index red, bold on'</span>,</span><br><span class="line">	num_format_str=<span class="string">'#,##0.00'</span>)</span><br><span class="line">style1 = xlwt.easyxf(num_format_str=<span class="string">'D-MMM-YY'</span>)</span><br><span class="line"></span><br><span class="line">wb = xlwt.Workbook()</span><br><span class="line">ws = wb.add_sheet(<span class="string">'A Test Sheet'</span>)</span><br><span class="line"></span><br><span class="line">ws.write(<span class="number">0</span>, <span class="number">0</span>, <span class="number">1234.56</span>, style0)</span><br><span class="line">ws.write(<span class="number">1</span>, <span class="number">0</span>, datetime.now(), style1)</span><br><span class="line">ws.write(<span class="number">2</span>, <span class="number">0</span>, <span class="number">1</span>)</span><br><span class="line">ws.write(<span class="number">2</span>, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">ws.write(<span class="number">2</span>, <span class="number">2</span>, xlwt.Formula(<span class="string">"A3+B3"</span>))</span><br><span class="line"></span><br><span class="line">wb.save(<span class="string">'example.xls'</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure> 
       
 
       
@@ -339,7 +302,7 @@ wb.save(<span class="string">'example.xls'</span>)
   
   
     <a href="/2018/06/16/PythonSelenium/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">PythonSelenium</div>
+      <div class="article-nav-title">Selenium的简单学习</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -481,15 +444,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数学建模</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Selenium</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数学建模</a>
               </li>
             
             <div class="clearfix"></div>
