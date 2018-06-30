@@ -17,7 +17,7 @@
 <meta property="og:description" content="最长递增子序列 为啥不能使用暴力解决这个问题：设A串长为n. A串子序列个数$ 2^n $,判断其是否递增,时间复杂度变为:$ O(n*2^n) $.  And of course we cannot accept that.所以出现了基本上以下三种方式：两个$O(n^2)$可求出序列本身，一个$ O(nlogn) $求出序列最大长度  前言：最长公共子序列子序列可以不连续，但是有先后的次序关系.">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://yoursugars.github.io/img/a1.png">
-<meta property="og:updated_time" content="2018-06-30T07:41:59.980Z">
+<meta property="og:updated_time" content="2018-06-30T08:00:14.573Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单调递增子序列">
 <meta name="twitter:description" content="最长递增子序列 为啥不能使用暴力解决这个问题：设A串长为n. A串子序列个数$ 2^n $,判断其是否递增,时间复杂度变为:$ O(n*2^n) $.  And of course we cannot accept that.所以出现了基本上以下三种方式：两个$O(n^2)$可求出序列本身，一个$ O(nlogn) $求出序列最大长度  前言：最长公共子序列子序列可以不连续，但是有先后的次序关系.">
@@ -230,6 +230,7 @@
 <p><strong>especially:<br>如果添加一个新数(即增加LIS的长度)，需要替换掉前面全部的数据，此时的序列为正确的序列</strong></p>
 <p><strong><em>e.g.1.</em></strong> 若此时取序列A = {2, <strong>1</strong>, 5, <strong>3</strong>, 6, <strong>4</strong>, <strong>8</strong>, <strong>9</strong>, 7, 8, 9}<br>answer:{1, 3, 4, 7, 8, 9}<br>real answer:{1, 3, 4, 7, 8, 9}</p>
 <p><strong><em>e.g.2.</em></strong> A={2, 4, <strong>1</strong>, <strong>3</strong>, <strong>4</strong>, 0}<br><strong><em>start:</em></strong> {2, 4}<br><em>setp1:</em> {1, 4}    1替换2, 序列不正确 但是长度为2正确<br><em>setp2:</em> {1, 3}    3替换4，序列正确，长度为2正确<br><em>setp3:</em> {1, 3, 4} 4直接接在序列后，序列正确，长度为3正确      <strong>!!!此时增加了LIS长度 数据也都被替换完毕了 所以此时为正确的最长递增序列形式</strong><br><em>setp4:</em> {0, 3, 4} 0替换1，序列不正确，长度为3正确。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//先贴上别人的代码再说</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mem(a,n) memset(a,n,sizeof(a))</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1e3</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">int</span> dp[N],a[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n))</span><br><span class="line">    &#123;</span><br><span class="line">        mem(dp,INF);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            *lower_bound(dp,dp+n,a[i])=a[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,lower_bound(dp,dp+n,INF)-dp);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>感谢我徒弟的讲解与指导<br>想表达的就是这么多 虽然还是有点迷迷糊糊的 但是隐隐约约的懂了 </p>
 </blockquote>
@@ -291,7 +292,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  | 字数统计: </span>
-        <span class="post-count">1,700字</span>
+        <span class="post-count">1,816字</span>
       </span>
     </span>
 </div>		
@@ -587,11 +588,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color5">数学建模</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数学建模</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
             
             <div class="clearfix"></div>
