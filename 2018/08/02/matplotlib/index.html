@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yoursugars.github.io">
-  <title>Archives: 2018 | A Palace For Sugar</title>
+  <title>matplotlib | A Palace For Sugar</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="If you want to find sugar, that&apos;s me.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="A Palace For Sugar">
-<meta property="og:url" content="https://yoursugars.github.io/archives/2018/index.html">
+  <meta name="description" content="画图吧 &amp;lt;–!more–&amp;gt; 条形图12345678910111213141516171819#条形图import matplotlib.pyplot as pltplt.style.use(&amp;apos;ggplot&amp;apos;)#模拟ggplot2风格customers=[&amp;apos;Sugar&amp;apos;, &amp;apos;Xuyaqi&amp;apos;, &amp;apos;YYX&amp;apos;, &amp;">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="matplotlib">
+<meta property="og:url" content="https://yoursugars.github.io/2018/08/02/matplotlib/index.html">
 <meta property="og:site_name" content="A Palace For Sugar">
-<meta property="og:description" content="If you want to find sugar, that&apos;s me.">
+<meta property="og:description" content="画图吧 &amp;lt;–!more–&amp;gt; 条形图12345678910111213141516171819#条形图import matplotlib.pyplot as pltplt.style.use(&amp;apos;ggplot&amp;apos;)#模拟ggplot2风格customers=[&amp;apos;Sugar&amp;apos;, &amp;apos;Xuyaqi&amp;apos;, &amp;apos;YYX&amp;apos;, &amp;">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-02T08:39:21.111Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="A Palace For Sugar">
-<meta name="twitter:description" content="If you want to find sugar, that&apos;s me.">
+<meta name="twitter:title" content="matplotlib">
+<meta name="twitter:description" content="画图吧 &amp;lt;–!more–&amp;gt; 条形图12345678910111213141516171819#条形图import matplotlib.pyplot as pltplt.style.use(&amp;apos;ggplot&amp;apos;)#模拟ggplot2风格customers=[&amp;apos;Sugar&amp;apos;, &amp;apos;Xuyaqi&amp;apos;, &amp;apos;YYX&amp;apos;, &amp;">
   
     <link rel="alternative" href="/atom.xml" title="A Palace For Sugar" type="application/atom+xml">
   
@@ -157,36 +159,76 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-matplotlib" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      matplotlib
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/02/matplotlib/" class="archive-article-date">
+
+        
+        <a href="/2018/08/02/matplotlib/" class="archive-article-date">
   	<time datetime="2018-08-02T08:37:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-02</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/02/matplotlib/">matplotlib</a>
-    </h1>
-  
+		
+		<span class="archive-article-date">
+			阅读量 <span id="busuanzi_value_page_pv"></span>
+		</span>
 
-        <div class="article-info info-on-right">
-          
+        
+      </header>
+    
+
+	
+		
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>画图吧</p>
+<p>&lt;–!more–&gt;</p>
+<h2 id="条形图"><a href="#条形图" class="headerlink" title="条形图"></a>条形图</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#条形图</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">plt.style.use(&apos;ggplot&apos;)</span><br><span class="line">#模拟ggplot2风格</span><br><span class="line">customers=[&apos;Sugar&apos;, &apos;Xuyaqi&apos;, &apos;YYX&apos;, &apos;XYQ&apos;, &apos;Gray&apos;, &apos;Dean&apos;]</span><br><span class="line">customers_index = range(len(customers))</span><br><span class="line">#创建客户索引列表</span><br><span class="line">customers_sale=[127, 190, 245, 23, 85, 56]</span><br><span class="line">figure = plt.figure()</span><br><span class="line">ax1 = figure.add_subplot(1, 1, 1)</span><br><span class="line">ax1.bar(customers_index, customers_sale, align=&apos;center&apos;, color = &apos;darkblue&apos;)</span><br><span class="line">ax1.xaxis.set_ticks_position(&apos;bottom&apos;)</span><br><span class="line">ax1.yaxis.set_ticks_position(&apos;left&apos;)</span><br><span class="line">plt.xticks(customers_index, customers, rotation = 0, fontsize = &apos;small&apos;)</span><br><span class="line">plt.xlabel(&apos;Customer Name&apos;)</span><br><span class="line">plt.ylabel(&apos;Sale Amount&apos;)</span><br><span class="line">plt.title(&apos;What you want?&apos;)</span><br><span class="line">plt.savefig(&apos;bar_plot.png&apos;, dpi = 400, bbox_inches = &apos;tight&apos;)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>请作者喝养乐多<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wepay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -198,175 +240,133 @@
 		</ul>
 	</div>
 
-          
+	<!-- 字数统计 -->	 
+	 
+		<div style="margin-top:0px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  | 字数统计: </span>
+        <span class="post-count">125字</span>
+      </span>
+    </span>
+</div>		
+	 
+      
 
+      
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://yoursugars.github.io/2018/08/02/matplotlib/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/30/单调递增子序列/" class="archive-article-date">
-  	<time datetime="2018-06-30T05:49:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-30</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/06/30/单调递增子序列/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">单调递增子序列</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/30/单调递增子序列/">单调递增子序列</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/17/xlrd/" class="archive-article-date">
-  	<time datetime="2018-06-17T03:38:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/17/xlrd/">xlrd与xlwt</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/16/PythonSelenium/" class="archive-article-date">
-  	<time datetime="2018-06-16T13:40:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/16/PythonSelenium/">Selenium的简单学习</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Selenium</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/15/你不懂写文档的艺术/" class="archive-article-date">
-  	<time datetime="2018-06-15T13:29:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-15</time>
-</a>
-        </div>
-    	 
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "https://yoursugars.github.io/2018/08/02/matplotlib/",
+  owner: 'yoursugars',
+  repo: 'yoursugars.github.io',
+  oauth: {
+    client_id: '4276f392874ee4f0e743',
+    client_secret: 'fa68ce1e74764fc2edb609ab46f5300cf8732c72',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/15/你不懂写文档的艺术/">你不懂写文档的艺术</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数学建模</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -400,8 +400,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
