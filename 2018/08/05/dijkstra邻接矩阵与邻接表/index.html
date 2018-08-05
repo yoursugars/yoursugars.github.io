@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yoursugars.github.io">
-  <title>Archives: 2018/6 | A Palace For Sugar</title>
+  <title>dijkstra邻接矩阵与邻接表 | A Palace For Sugar</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="If you want to find sugar, that&apos;s me.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="A Palace For Sugar">
-<meta property="og:url" content="https://yoursugars.github.io/archives/2018/06/index.html">
+  <meta name="description" content="问题描述所以草儿决定在要在最短的时间去一个自己想去的地方！因为草儿的家在一个小镇上，没有火车经过，所以她只能去邻近的城市坐火车。 输入描述输入数据有多组，每组的第一行是三个整数T，S和D，表示有T条路，和草儿家相邻的城市的有S个，草儿想去的地方有D个；接着有T行，每行有三个整数a，b，time,表示a,b城市之间的车程是time小时；(1=&amp;lt;(a,b)&amp;lt;=1000;a,b 之间可能有多">
+<meta name="keywords" content="算法,算法模板">
+<meta property="og:type" content="article">
+<meta property="og:title" content="dijkstra邻接矩阵与邻接表">
+<meta property="og:url" content="https://yoursugars.github.io/2018/08/05/dijkstra邻接矩阵与邻接表/index.html">
 <meta property="og:site_name" content="A Palace For Sugar">
-<meta property="og:description" content="If you want to find sugar, that&apos;s me.">
+<meta property="og:description" content="问题描述所以草儿决定在要在最短的时间去一个自己想去的地方！因为草儿的家在一个小镇上，没有火车经过，所以她只能去邻近的城市坐火车。 输入描述输入数据有多组，每组的第一行是三个整数T，S和D，表示有T条路，和草儿家相邻的城市的有S个，草儿想去的地方有D个；接着有T行，每行有三个整数a，b，time,表示a,b城市之间的车程是time小时；(1=&amp;lt;(a,b)&amp;lt;=1000;a,b 之间可能有多">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-05T10:03:36.238Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="A Palace For Sugar">
-<meta name="twitter:description" content="If you want to find sugar, that&apos;s me.">
+<meta name="twitter:title" content="dijkstra邻接矩阵与邻接表">
+<meta name="twitter:description" content="问题描述所以草儿决定在要在最短的时间去一个自己想去的地方！因为草儿的家在一个小镇上，没有火车经过，所以她只能去邻近的城市坐火车。 输入描述输入数据有多组，每组的第一行是三个整数T，S和D，表示有T条路，和草儿家相邻的城市的有S个，草儿想去的地方有D个；接着有T行，每行有三个整数a，b，time,表示a,b城市之间的车程是time小时；(1=&amp;lt;(a,b)&amp;lt;=1000;a,b 之间可能有多">
   
     <link rel="alternative" href="/atom.xml" title="A Palace For Sugar" type="application/atom+xml">
   
@@ -157,36 +159,83 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-dijkstra邻接矩阵与邻接表" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/30/单调递增子序列/" class="archive-article-date">
-  	<time datetime="2018-06-30T05:49:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-30</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/30/单调递增子序列/">单调递增子序列</a>
+    <h1 class="article-title" itemprop="name">
+      dijkstra邻接矩阵与邻接表
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/08/05/dijkstra邻接矩阵与邻接表/" class="archive-article-date">
+  	<time datetime="2018-08-05T09:41:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-05</time>
+</a>
+		
+		<span class="archive-article-date">
+			阅读量 <span id="busuanzi_value_page_pv"></span>
+		</span>
+
+        
+      </header>
+    
+
+	
+		
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>问题描述</strong><br>所以草儿决定在要在最短的时间去一个自己想去的地方！<br>因为草儿的家在一个小镇上，没有火车经过，所以她只能去邻近的城市坐火车。</p>
+<p><strong>输入描述</strong><br>输入数据有多组，每组的第一行是三个整数T，S和D，表示有T条路，和草儿家相邻的城市的有S个，草儿想去的地方有D个；<br>接着有T行，每行有三个整数a，b，time,表示a,b城市之间的车程是time小时；(1=&lt;(a,b)&lt;=1000;a,b 之间可能有多条路)<br>接着的第T+1行有S个数，表示和草儿家相连的城市；<br>接着的第T+2行有D个数，表示草儿想去地方。</p>
+<p><strong>输出描述</strong><br>输出草儿能去某个喜欢的城市的最短时间。</p>
+<a id="more"></a>
+<p><strong>输入样例</strong><br>6 2 3<br>1 3 5<br>1 4 7<br>2 8 12<br>3 8 4<br>4 9 12<br>9 10 2<br>1 2<br>8 9 10</p>
+<p><strong>输出样例</strong><br>9</p>
+<p><strong>震惊</strong>：<em>这道题其实一次Dijkstra就可以了，我们将草儿的家看做0，从草儿家到相邻镇的花费看做0，那么我们就只需要求草儿家到各个目的地的最短路即可，一次Dijkstra便可解决</em><br>设置一个点 使其到起点的距离为0，再逐步更新其他的点？</p>
+<h3 id="dijstra邻接矩阵"><a href="#dijstra邻接矩阵" class="headerlink" title="dijstra邻接矩阵"></a>dijstra邻接矩阵</h3><p>很显然邻接矩阵简单一些 但是数据大的话 就十分的不管用了。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 0x3f3f3f3f</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> Ni = <span class="number">1005</span>;</span><br><span class="line"><span class="keyword">int</span> graph[<span class="number">1005</span>][<span class="number">1005</span>];</span><br><span class="line"><span class="keyword">int</span> dis[Ni], n, Max = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">bool</span> visited[<span class="number">1005</span>];</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> a, w;</span><br><span class="line">    node()&#123;&#125;</span><br><span class="line">    node(<span class="keyword">int</span> m, <span class="keyword">int</span> n)&#123;a=m; w=n;&#125;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> node &amp; x) <span class="keyword">const</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(w==x.w) <span class="keyword">return</span> a&lt;x.a; <span class="comment">//返回另一个顶点小的那个 </span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> w &gt; x.w; <span class="comment">//返回权值小的那个 </span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Dijkstra</span><span class="params">(<span class="keyword">int</span> s)</span> <span class="comment">//源点 </span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= Max; i++)</span><br><span class="line">    	visited[i] = <span class="literal">false</span>;</span><br><span class="line">    priority_queue&lt;node&gt; q;</span><br><span class="line">    dis[s] = <span class="number">0</span>;</span><br><span class="line">    q.push(node(s, dis[s]));  </span><br><span class="line">    <span class="keyword">while</span>(!q.empty())</span><br><span class="line">    &#123;</span><br><span class="line">        node x = q.top();</span><br><span class="line">		q.pop();</span><br><span class="line">		<span class="keyword">if</span>(visited[x.a])</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        visited[x.a] = <span class="literal">true</span>;</span><br><span class="line">    	<span class="keyword">for</span>(<span class="keyword">int</span> v = <span class="number">1</span>; v &lt;= Max; v++) <span class="comment">//找所有与他相邻的顶点，进行松弛操作，更新估算距离，压入队列。</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(v != x.a &amp;&amp; !visited[v] &amp;&amp; dis[v] &gt; dis[x.a]+graph[x.a][v])</span><br><span class="line">            &#123;</span><br><span class="line">                dis[v] = dis[x.a]+graph[x.a][v];</span><br><span class="line">                q.push(node(v, dis[v]));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> T, S, D, a, b, w;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;T, &amp;S, &amp;D) != EOF)</span><br><span class="line">    &#123;</span><br><span class="line">		<span class="built_in">memset</span>(dis, INF, <span class="keyword">sizeof</span>(dis));</span><br><span class="line">		<span class="built_in">memset</span>(graph, INF, <span class="keyword">sizeof</span>(graph));		</span><br><span class="line">        <span class="keyword">while</span>(T--)<span class="comment">//T条边 </span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;a,&amp;b,&amp;w);</span><br><span class="line">            graph[a][b] = min(graph[a][b], w);</span><br><span class="line">            graph[b][a] = min(graph[b][a], w);</span><br><span class="line">			Max = max(Max, max(a, b));<span class="comment">//没给最大的点 不然就不用求了 </span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; S; i++)</span><br><span class="line">        &#123;</span><br><span class="line">        	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">        	Dijkstra(n);</span><br><span class="line"><span class="comment">//        	for(int i = 1; i &lt;= 10; i++)</span></span><br><span class="line"><span class="comment">//        		printf("%d ", dis[i]);</span></span><br><span class="line"><span class="comment">//	       	printf("\n");</span></span><br><span class="line">        &#125;</span><br><span class="line">		<span class="keyword">int</span> min = INF;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; D; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">			<span class="keyword">if</span>(min &gt; dis[n])</span><br><span class="line">				min = dis[n];</span><br><span class="line">		&#125; </span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, min); </span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="dijstra邻接表"><a href="#dijstra邻接表" class="headerlink" title="dijstra邻接表"></a>dijstra邻接表</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF  0x3f3f3f3f</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> Ni = <span class="number">10000</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> v,w;</span><br><span class="line">    node()&#123;&#125;</span><br><span class="line">    node(<span class="keyword">int</span> a,<span class="keyword">int</span> b)&#123;v=a; w=b;&#125;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> node &amp; a) <span class="keyword">const</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(w==a.w) <span class="keyword">return</span> v&lt;a.v; <span class="comment">//返回另一个顶点小的那个 </span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> w &gt; a.w; <span class="comment">//返回权值小的那个 </span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;node&gt; eg[Ni]; <span class="comment">//每个点都有一个向量存其临边 </span></span><br><span class="line"><span class="keyword">int</span> dis[Ni],n;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Dijkstra</span><span class="params">(<span class="keyword">int</span> s)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;=n;i++) dis[i]=INF;</span><br><span class="line">    dis[s]=<span class="number">0</span>;</span><br><span class="line">    <span class="comment">//用优先队列优化</span></span><br><span class="line">    priority_queue&lt;node&gt; q;</span><br><span class="line">    q.push(node(s,dis[s]));  </span><br><span class="line">    <span class="keyword">while</span>(!q.empty())</span><br><span class="line">    &#123;</span><br><span class="line">        node x=q.top();q.pop();</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;eg[x.v].size();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            node y=eg[x.v][i];</span><br><span class="line">            <span class="keyword">if</span>(dis[y.v]&gt;x.w+y.w)</span><br><span class="line">            &#123;</span><br><span class="line">                dis[y.v]=x.w+y.w;</span><br><span class="line">                q.push(node(y.v,dis[y.v]));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,b,d,m;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m),n+m)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=n;i++) eg[i].clear();</span><br><span class="line">        <span class="keyword">while</span>(m--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;a,&amp;b,&amp;d);</span><br><span class="line">            eg[a].push_back(node(b,d));</span><br><span class="line">            eg[b].push_back(node(a,d));</span><br><span class="line">            <span class="comment">//题目上需要更新 node的距离 有点麻烦了 要搜索所有的临边 所以不在这题采用邻接表了 </span></span><br><span class="line">        &#125;</span><br><span class="line">        Dijkstra(<span class="number">1</span>);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,dis[n]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>请作者喝养乐多<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wepay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -194,141 +243,141 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/17/xlrd/" class="archive-article-date">
-  	<time datetime="2018-06-17T03:38:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/17/xlrd/">xlrd与xlwt</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/16/PythonSelenium/" class="archive-article-date">
-  	<time datetime="2018-06-16T13:40:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/16/PythonSelenium/">Selenium的简单学习</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Selenium</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">算法模板</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+	<!-- 字数统计 -->	 
+	 
+		<div style="margin-top:0px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  | 字数统计: </span>
+        <span class="post-count">1,106字</span>
+      </span>
+    </span>
+</div>		
+	 
+      
 
+      
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://yoursugars.github.io/2018/08/05/dijkstra邻接矩阵与邻接表/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/15/你不懂写文档的艺术/" class="archive-article-date">
-  	<time datetime="2018-06-15T13:29:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-15</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/08/05/SPFA与差分约束/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SPFA与差分约束</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/15/你不懂写文档的艺术/">你不懂写文档的艺术</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数学建模</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "https://yoursugars.github.io/2018/08/05/dijkstra邻接矩阵与邻接表/",
+  owner: 'yoursugars',
+  repo: 'yoursugars.github.io',
+  oauth: {
+    client_id: '4276f392874ee4f0e743',
+    client_secret: 'fa68ce1e74764fc2edb609ab46f5300cf8732c72',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -362,8 +411,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
