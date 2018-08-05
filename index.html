@@ -159,6 +159,114 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-SPFA与差分约束" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/05/SPFA与差分约束/">SPFA与差分约束</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/05/SPFA与差分约束/" class="archive-article-date">
+  	<time datetime="2018-08-05T08:15:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-05</time>
+</a>
+		
+        
+      </header>
+    
+
+	
+		
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="思考：差分约束"><a href="#思考：差分约束" class="headerlink" title="思考：差分约束"></a>思考：差分约束</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">$max(x_1-x_2)$</th>
+<th style="text-align:center">$min(x_1-x_2)$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="/2018/08/05/SPFA与差分约束/a1.png" alt="avatar"></td>
+<td style="text-align:center"><img src="/2018/08/05/SPFA与差分约束/a2.png" alt="avatar"></td>
+</tr>
+<tr>
+<td style="text-align:center">求最短路</td>
+<td style="text-align:center">求最长路</td>
+</tr>
+<tr>
+<td style="text-align:center">即在满足所有不等式的情况下 松弛所有的边 由于$\leq$ 求max的边界情况</td>
+<td style="text-align:center">求最长路 松边 由于$\geq$ 求min的边界情况</td>
+</tr>
+</tbody>
+</table>
+<p>$min(x_1-x_2) = -max(x_2-x_1)$<br>其实就是把不等式乘以-1 求<br>在代码里直接 松弛的时候 dis[es[e].v] &lt; dis[x]+es[e].w 变符号大小就行</p>
+        
+          <a class="article-more-a" href="/2018/08/05/SPFA与差分约束/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">算法模板</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+	<!-- 字数统计 -->	 
+	 
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/05/SPFA与差分约束/">展开全文 >></a>
+        </p>
+      
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-matplotlib" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -527,7 +635,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=512358238&auto=1&height=66"></iframe></p>
-<h1 id="如何给word文档一个优美的排版？"><a href="#如何给word文档一个优美的排版？" class="headerlink" title="如何给word文档一个优美的排版？"></a>如何给word文档一个优美的排版？</h1><p>其实写这个的灵感来自于朱生豪先生写给她夫人宋清如的情书<br>大家可以看一看 当个文章引入吧。<br>
+<h1 id="如何给word文档一个优美的排版？"><a href="#如何给word文档一个优美的排版？" class="headerlink" title="如何给word文档一个优美的排版？"></a>如何给word文档一个优美的排版？</h1><p>其实写这个的灵感来自于朱生豪先生写给她夫人宋清如的情书<br>大家可以看一看 当个文章引入吧。<br></p>
         
           <a class="article-more-a" href="/2018/06/15/你不懂写文档的艺术/#more">more >></a>
         
@@ -752,6 +860,14 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">算法模板</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
@@ -761,10 +877,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数学建模</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
             
             <div class="clearfix"></div>
