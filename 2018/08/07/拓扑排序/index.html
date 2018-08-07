@@ -6,18 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yoursugars.github.io">
-  <title>Tag: Selenium | A Palace For Sugar</title>
+  <title>拓扑排序 | A Palace For Sugar</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="If you want to find sugar, that&apos;s me.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="A Palace For Sugar">
-<meta property="og:url" content="https://yoursugars.github.io/tags/Selenium/index.html">
+  <meta name="description" content="其实我特不喜欢 写一个题发一个博客 因为我觉得写博客的目的是为了精简和记忆与回忆 但是我觉得我这个拓扑排序的代码写的太好看了 借鉴了别人的思路 但是代码简洁优美 唉 是我为数不多写题的时候思路清晰 突然醍醐灌顶 就写这个博客之后来看 ヾ(✿ﾟ▽ﾟ)ノ  拓扑排序 我自从第一次学习之后就再没有忘记了一句话解释：以次输出入度为0的点">
+<meta name="keywords" content="算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="拓扑排序">
+<meta property="og:url" content="https://yoursugars.github.io/2018/08/07/拓扑排序/index.html">
 <meta property="og:site_name" content="A Palace For Sugar">
-<meta property="og:description" content="If you want to find sugar, that&apos;s me.">
+<meta property="og:description" content="其实我特不喜欢 写一个题发一个博客 因为我觉得写博客的目的是为了精简和记忆与回忆 但是我觉得我这个拓扑排序的代码写的太好看了 借鉴了别人的思路 但是代码简洁优美 唉 是我为数不多写题的时候思路清晰 突然醍醐灌顶 就写这个博客之后来看 ヾ(✿ﾟ▽ﾟ)ノ  拓扑排序 我自从第一次学习之后就再没有忘记了一句话解释：以次输出入度为0的点">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://yoursugars.github.io/2018/08/07/拓扑排序/a1.png">
+<meta property="og:updated_time" content="2018-08-07T12:16:44.548Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="A Palace For Sugar">
-<meta name="twitter:description" content="If you want to find sugar, that&apos;s me.">
+<meta name="twitter:title" content="拓扑排序">
+<meta name="twitter:description" content="其实我特不喜欢 写一个题发一个博客 因为我觉得写博客的目的是为了精简和记忆与回忆 但是我觉得我这个拓扑排序的代码写的太好看了 借鉴了别人的思路 但是代码简洁优美 唉 是我为数不多写题的时候思路清晰 突然醍醐灌顶 就写这个博客之后来看 ヾ(✿ﾟ▽ﾟ)ノ  拓扑排序 我自从第一次学习之后就再没有忘记了一句话解释：以次输出入度为0的点">
+<meta name="twitter:image" content="https://yoursugars.github.io/2018/08/07/拓扑排序/a1.png">
   
     <link rel="alternative" href="/atom.xml" title="A Palace For Sugar" type="application/atom+xml">
   
@@ -157,64 +161,229 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-拓扑排序" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/16/PythonSelenium/" class="archive-article-date">
-  	<time datetime="2018-06-16T13:40:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/16/PythonSelenium/">Selenium的简单学习</a>
+    <h1 class="article-title" itemprop="name">
+      拓扑排序
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/08/07/拓扑排序/" class="archive-article-date">
+  	<time datetime="2018-08-07T11:47:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-07</time>
+</a>
+		
+		<span class="archive-article-date">
+			阅读量 <span id="busuanzi_value_page_pv"></span>
+		</span>
+
+        
+      </header>
+    
+
+	
+		
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>其实我特不喜欢 写一个题发一个博客 因为我觉得写博客的目的是为了精简和记忆与回忆 但是我觉得我这个拓扑排序的代码写的太好看了 借鉴了别人的思路 但是代码简洁优美 唉 是我为数不多写题的时候思路清晰 突然醍醐灌顶 就写这个博客之后来看 ヾ(✿ﾟ▽ﾟ)ノ</p>
+</blockquote>
+<p><br><br>拓扑排序 我自从第一次学习之后就再没有忘记了<br>一句话解释：以次输出入度为0的点</p>
+<a id="more"></a>
+<p><strong>题目内容</strong><br>有N个比赛队（1&lt;=N&lt;=500），编号依次为1,2,3,…,N进行比赛，比赛结束后，裁判委员会要将所有参赛队伍从前往后依次排名，但现在裁判委员会不能直接获得每个队的比赛成绩，只知道每场比赛的结果，即P1赢P2，用P1，P2表示，排名时P1在P2之前。现在请你编程序确定排名。</p>
+<p><strong>输入描述</strong><br>输入有若干组，每组中的第一行为二个数N（1&lt;=N&lt;=500），M；其中N表示队伍的个数，M表示接着有M行的输入数据。接下来的M行数据中，每行也有两个整数P1，P2表示即P1队赢了P2队。</p>
+<p><strong>输出描述</strong><br>给出一个符合要求的排名。输出时队伍号之间有空格，最后一名后面没有空格。<br>其他说明：符合条件的排名可能不是唯一的，此时要求输出时编号小的队伍在前；输入数据保证是正确的，即输入数据确保一定能有一个符合要求的排名。</p>
+<p><strong>输入样例</strong></p>
+<blockquote>
+<p>4 3<br>1 2<br>2 3<br>4 3</p>
+</blockquote>
+<p><strong>输出样例</strong></p>
+<blockquote>
+<p>1 2 4 3</p>
+</blockquote>
+<p>你看这个样例 然后你再看数据结构是啥样的：邻接表<br>还是画个图 我感觉我过两天就忘记了<br><img src="/2018/08/07/拓扑排序/a1.png" alt="avatar"></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt; </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> nmax 505</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v[nmax]; <span class="comment">//此乃邻接表 </span></span><br><span class="line"><span class="keyword">int</span> indegree[nmax]; <span class="comment">//用来存每个点的入度 </span></span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"></span><br><span class="line"><span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; ans;  </span><br><span class="line">priority_queue &lt;<span class="keyword">int</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,greater&lt;<span class="keyword">int</span>&gt; &gt; q; <span class="comment">//从小到大优先队列 </span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">topsort</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">		<span class="keyword">if</span>(indegree[i] == <span class="number">0</span>)</span><br><span class="line">			q.push(i);</span><br><span class="line">	<span class="keyword">while</span>(!q.empty())&#123;</span><br><span class="line">		<span class="keyword">int</span> x = q.top();q.pop();</span><br><span class="line">		ans.push(x);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; v[x].size(); i++) </span><br><span class="line">		&#123;	</span><br><span class="line">			indegree[v[x][i]]--;</span><br><span class="line">			<span class="keyword">if</span>(indegree[v[x][i]] == <span class="number">0</span>)</span><br><span class="line">				q.push(v[x][i]);				</span><br><span class="line">		&#125;	</span><br><span class="line">	&#125;			</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> x, y;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y;</span><br><span class="line">		indegree[y]++;</span><br><span class="line">		v[x].push_back(y);</span><br><span class="line">	&#125;</span><br><span class="line">	topsort();</span><br><span class="line">	<span class="keyword">int</span> ansNum = ans.size();<span class="comment">//我也真是惊了 这里不能i&lt;ans.size() 因为它会变化... </span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ansNum; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; ans.front() &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">		ans.pop();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>请作者喝养乐多<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wepay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Selenium</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+	<!-- 字数统计 -->	 
+	 
+		<div style="margin-top:0px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  | 字数统计: </span>
+        <span class="post-count">698字</span>
+      </span>
+    </span>
+</div>		
+	 
+      
 
+      
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://yoursugars.github.io/2018/08/07/拓扑排序/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/08/07/css/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">css</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "https://yoursugars.github.io/2018/08/07/拓扑排序/",
+  owner: 'yoursugars',
+  repo: 'yoursugars.github.io',
+  oauth: {
+    client_id: '4276f392874ee4f0e743',
+    client_secret: 'fa68ce1e74764fc2edb609ab46f5300cf8732c72',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -248,9 +417,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yoursugars.github.io/"/>
-  <updated>2018-08-07T07:25:13.449Z</updated>
+  <updated>2018-08-07T12:16:44.548Z</updated>
   <id>https://yoursugars.github.io/</id>
   
   <author>
@@ -17,13 +17,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>拓扑排序</title>
+    <link href="https://yoursugars.github.io/2018/08/07/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/"/>
+    <id>https://yoursugars.github.io/2018/08/07/拓扑排序/</id>
+    <published>2018-08-07T11:47:26.000Z</published>
+    <updated>2018-08-07T12:16:44.548Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>其实我特不喜欢 写一个题发一个博客 因为我觉得写博客的目的是为了精简和记忆与回忆 但是我觉得我这个拓扑排序的代码写的太好看了 借鉴了别人的思路 但是代码简洁优美 唉 是我为数不多写题的时候思路清晰 突然醍醐灌顶 就写这个博客之后来看 ヾ(✿ﾟ▽ﾟ)ノ</p></blockquote><p><br><br>拓扑排序 我自从第一次学习之后就再没有忘记了<br>一句话解释：以次输出入度为0的点</p><a id="more"></a><p><strong>题目内容</strong><br>有N个比赛队（1&lt;=N&lt;=500），编号依次为1,2,3,…,N进行比赛，比赛结束后，裁判委员会要将所有参赛队伍从前往后依次排名，但现在裁判委员会不能直接获得每个队的比赛成绩，只知道每场比赛的结果，即P1赢P2，用P1，P2表示，排名时P1在P2之前。现在请你编程序确定排名。</p><p><strong>输入描述</strong><br>输入有若干组，每组中的第一行为二个数N（1&lt;=N&lt;=500），M；其中N表示队伍的个数，M表示接着有M行的输入数据。接下来的M行数据中，每行也有两个整数P1，P2表示即P1队赢了P2队。</p><p><strong>输出描述</strong><br>给出一个符合要求的排名。输出时队伍号之间有空格，最后一名后面没有空格。<br>其他说明：符合条件的排名可能不是唯一的，此时要求输出时编号小的队伍在前；输入数据保证是正确的，即输入数据确保一定能有一个符合要求的排名。</p><p><strong>输入样例</strong></p><blockquote><p>4 3<br>1 2<br>2 3<br>4 3</p></blockquote><p><strong>输出样例</strong></p><blockquote><p>1 2 4 3</p></blockquote><p>你看这个样例 然后你再看数据结构是啥样的：邻接表<br>还是画个图 我感觉我过两天就忘记了<br><img src="/2018/08/07/拓扑排序/a1.png" alt="avatar"></p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt; </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> nmax 505</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v[nmax]; <span class="comment">//此乃邻接表 </span></span><br><span class="line"><span class="keyword">int</span> indegree[nmax]; <span class="comment">//用来存每个点的入度 </span></span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"></span><br><span class="line"><span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; ans;  </span><br><span class="line">priority_queue &lt;<span class="keyword">int</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,greater&lt;<span class="keyword">int</span>&gt; &gt; q; <span class="comment">//从小到大优先队列 </span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">topsort</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line"><span class="keyword">if</span>(indegree[i] == <span class="number">0</span>)</span><br><span class="line">q.push(i);</span><br><span class="line"><span class="keyword">while</span>(!q.empty())&#123;</span><br><span class="line"><span class="keyword">int</span> x = q.top();q.pop();</span><br><span class="line">ans.push(x);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; v[x].size(); i++) </span><br><span class="line">&#123;</span><br><span class="line">indegree[v[x][i]]--;</span><br><span class="line"><span class="keyword">if</span>(indegree[v[x][i]] == <span class="number">0</span>)</span><br><span class="line">q.push(v[x][i]);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">int</span> x, y;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y;</span><br><span class="line">indegree[y]++;</span><br><span class="line">v[x].push_back(y);</span><br><span class="line">&#125;</span><br><span class="line">topsort();</span><br><span class="line"><span class="keyword">int</span> ansNum = ans.size();<span class="comment">//我也真是惊了 这里不能i&lt;ans.size() 因为它会变化... </span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ansNum; i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; ans.front() &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">ans.pop();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;其实我特不喜欢 写一个题发一个博客 因为我觉得写博客的目的是为了精简和记忆与回忆 但是我觉得我这个拓扑排序的代码写的太好看了 借鉴了别人的思路 但是代码简洁优美 唉 是我为数不多写题的时候思路清晰 突然醍醐灌顶 就写这个博客之后来看 ヾ(✿ﾟ▽ﾟ)ノ&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;拓扑排序 我自从第一次学习之后就再没有忘记了&lt;br&gt;一句话解释：以次输出入度为0的点&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="算法" scheme="https://yoursugars.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>css</title>
     <link href="https://yoursugars.github.io/2018/08/07/css/"/>
     <id>https://yoursugars.github.io/2018/08/07/css/</id>
     <published>2018-08-07T07:01:45.000Z</published>
-    <updated>2018-08-07T07:25:13.449Z</updated>
+    <updated>2018-08-07T07:37:32.699Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="前端实训"><a href="#前端实训" class="headerlink" title="前端实训"></a>前端实训</h3><p>说好不学前端的呢</p><p><img src="/2018/08/07/css/a1.png" alt="avatar"></p><h2 id="hBuilder快捷键"><a href="#hBuilder快捷键" class="headerlink" title="hBuilder快捷键"></a>hBuilder快捷键</h2><pre><code>1. shift + ↑↓←→  选中2. shift + Table 反退格3.</code></pre><a id="more"></a><h2 id="css"><a href="#css" class="headerlink" title="css"></a>css</h2><blockquote><p>优先级：<br>    行内样式    &gt; 内部样式     &gt; 外部样式<br>    ID选择器(#) &gt; 类选择器(.)  &gt; 标签选择器    </p></blockquote><table><thead><tr><th style="text-align:center">选择器</th><th style="text-align:center">meaning</th></tr></thead><tbody><tr><td style="text-align:center">E&gt;F</td><td style="text-align:center">子代选择器</td></tr><tr><td style="text-align:center">E F</td><td style="text-align:center">后代选择器</td></tr><tr><td style="text-align:center">E+F</td><td style="text-align:center">相邻兄弟选择器(紧接在另一元素后的元素 且二者有相同父元素)</td></tr><tr><td style="text-align:center">E~F</td><td style="text-align:center">通用兄弟选择器(考虑后面的兄弟 不考虑自己)</td></tr></tbody></table>]]></content>
+    <content type="html"><![CDATA[<h3 id="前端实训"><a href="#前端实训" class="headerlink" title="前端实训"></a>前端实训</h3><p>说好不学前端的呢</p><p><img src="/2018/08/07/css/a1.png" alt="avatar"></p><h2 id="hBuilder快捷键"><a href="#hBuilder快捷键" class="headerlink" title="hBuilder快捷键"></a>hBuilder快捷键</h2><pre><code>1. shift + ↑↓←→  选中2. shift + Table 反退格3. control+ /    一键注释</code></pre><a id="more"></a><h2 id="css"><a href="#css" class="headerlink" title="css"></a>css</h2><blockquote><p>优先级：<br>    行内样式    &gt; 内部样式     &gt; 外部样式<br>    ID选择器(#) &gt; 类选择器(.)  &gt; 标签选择器    </p></blockquote><table><thead><tr><th style="text-align:center">选择器</th><th style="text-align:center">meaning</th></tr></thead><tbody><tr><td style="text-align:center">E&gt;F</td><td style="text-align:center">子代选择器</td></tr><tr><td style="text-align:center">E F</td><td style="text-align:center">后代选择器</td></tr><tr><td style="text-align:center">E+F</td><td style="text-align:center">相邻兄弟选择器(紧接在另一元素后的元素 且二者有相同父元素)</td></tr><tr><td style="text-align:center">E~F</td><td style="text-align:center">通用兄弟选择器(考虑后面的兄弟 不考虑自己)</td></tr></tbody></table>]]></content>
     
     <summary type="html">
     
@@ -31,7 +54,7 @@
 &lt;p&gt;&lt;img src=&quot;/2018/08/07/css/a1.png&quot; alt=&quot;avatar&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;hBuilder快捷键&quot;&gt;&lt;a href=&quot;#hBuilder快捷键&quot; class=&quot;headerlink&quot; title=&quot;hBuilder快捷键&quot;&gt;&lt;/a&gt;hBuilder快捷键&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;1. shift + ↑↓←→  选中
 2. shift + Table 反退格
-3.
+3. control+ /    一键注释
 &lt;/code&gt;&lt;/pre&gt;
     
     </summary>
