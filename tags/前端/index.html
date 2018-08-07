@@ -6,22 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yoursugars.github.io">
-  <title>单调递增子序列 | A Palace For Sugar</title>
+  <title>Tag: 前端 | A Palace For Sugar</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最长递增子序列 为啥不能使用暴力解决这个问题：设A串长为n. A串子序列个数$ 2^n $,判断其是否递增,时间复杂度变为:$ O(n*2^n) $.  And of course we cannot accept that.所以出现了基本上以下三种方式：两个$O(n^2)$可求出序列本身，一个$ O(nlogn) $求出序列最大长度  前言：最长公共子序列子序列可以不连续，但是有先后的次序关系.">
-<meta name="keywords" content="算法">
-<meta property="og:type" content="article">
-<meta property="og:title" content="单调递增子序列">
-<meta property="og:url" content="https://yoursugars.github.io/2018/06/30/单调递增子序列/index.html">
+  <meta name="description" content="If you want to find sugar, that&apos;s me.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="A Palace For Sugar">
+<meta property="og:url" content="https://yoursugars.github.io/tags/前端/index.html">
 <meta property="og:site_name" content="A Palace For Sugar">
-<meta property="og:description" content="最长递增子序列 为啥不能使用暴力解决这个问题：设A串长为n. A串子序列个数$ 2^n $,判断其是否递增,时间复杂度变为:$ O(n*2^n) $.  And of course we cannot accept that.所以出现了基本上以下三种方式：两个$O(n^2)$可求出序列本身，一个$ O(nlogn) $求出序列最大长度  前言：最长公共子序列子序列可以不连续，但是有先后的次序关系.">
+<meta property="og:description" content="If you want to find sugar, that&apos;s me.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://yoursugars.github.io/2018/06/30/单调递增子序列/img/a1.png">
-<meta property="og:updated_time" content="2018-06-30T08:00:14.573Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="单调递增子序列">
-<meta name="twitter:description" content="最长递增子序列 为啥不能使用暴力解决这个问题：设A串长为n. A串子序列个数$ 2^n $,判断其是否递增,时间复杂度变为:$ O(n*2^n) $.  And of course we cannot accept that.所以出现了基本上以下三种方式：两个$O(n^2)$可求出序列本身，一个$ O(nlogn) $求出序列最大长度  前言：最长公共子序列子序列可以不连续，但是有先后的次序关系.">
-<meta name="twitter:image" content="https://yoursugars.github.io/2018/06/30/单调递增子序列/img/a1.png">
+<meta name="twitter:title" content="A Palace For Sugar">
+<meta name="twitter:description" content="If you want to find sugar, that&apos;s me.">
   
     <link rel="alternative" href="/atom.xml" title="A Palace For Sugar" type="application/atom+xml">
   
@@ -161,266 +157,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-单调递增子序列" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      单调递增子序列
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/08/07/css/" class="archive-article-date">
+  	<time datetime="2018-08-07T07:01:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-07</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/08/07/css/">css</a>
     </h1>
   
 
-        
-        <a href="/2018/06/30/单调递增子序列/" class="archive-article-date">
-  	<time datetime="2018-06-30T05:49:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-30</time>
-</a>
-		
-		<span class="archive-article-date">
-			阅读量 <span id="busuanzi_value_page_pv"></span>
-		</span>
-
-        
-      </header>
-    
-
-	
-		
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="最长递增子序列"><a href="#最长递增子序列" class="headerlink" title="最长递增子序列"></a>最长递增子序列</h2><blockquote>
-<p>为啥不能使用暴力解决这个问题：设A串长为n. A串子序列个数$ 2^n $,判断其是否递增,时间复杂度变为:$ O(n*2^n) $. </p>
-<font face="Console">And of course we cannot accept that.<br><br>所以出现了基本上以下三种方式：两个$O(n^2)$可求出序列本身，一个$ O(nlogn) $求出序列最大长度</font>
-</blockquote>
-<h3 id="前言：最长公共子序列"><a href="#前言：最长公共子序列" class="headerlink" title="前言：最长公共子序列"></a>前言：最长公共子序列</h3><p>子序列可以不连续，但是有先后的次序关系.</p>
-<blockquote>
-<p>为啥不能使用暴力解决这个问题：设A串长为n, B串长为m。A串子序列个数$2^n$, B串子序列个数$2^m$, 针对每一种情况进行匹配，时间复杂度变为： $O(2^n*2^m)$. </p>
-</blockquote>
-<a id="more"></a>
-<p>所以利用动态规划：<br>A = {a, b, c, 1, 2, 3, a, b, c}<br>B = {1, 2, 3, a, d, c}</p>
-<p><strong>定义状态:</strong><br>dp[i][j]: A串第i个位置，B串第j个位置前的两个序列的最大公共子序列.</p>
-<p><strong>状态转移方程:</strong><br>①A[i] == B[j] -&gt; dp[i][j] = dp[i-1][j-1] + 1<br><em>explanation:</em><br>字符串匹配时:i, j位置之前的最长公共子序列就是i-1,  j-1位置之前的长度+1</p>
-<p>②A[i] != B[j] -&gt; dp[i][j] = max(dp[i-1][j], dp[i][j-1])<br><em>explanation:</em><br>字符串不匹配时，最长公共子序列的长度是不会变的，但是我们有两种选择，就是在[i，j-1]位置以前的和[i，j-1]位置以前的两种情况之中，选取最大的最长公共子序列作为当前的最长公共子序列即可.</p>
-<p><img src="/2018/06/30/单调递增子序列/img/a1.png" alt="avatar"></p>
-<p>NYOJ.最长公共子序列<br><a href="http://acm.nyist.edu.cn/JudgeOnline/problem.php?pid=36" target="_blank" rel="noopener">http://acm.nyist.edu.cn/JudgeOnline/problem.php?pid=36</a></p>
-<h3 id="一、-o-n-2-方法"><a href="#一、-o-n-2-方法" class="headerlink" title="一、$o(n^2)$方法"></a>一、$o(n^2)$方法</h3><h4 id="1-转化成最长公共子序列求解"><a href="#1-转化成最长公共子序列求解" class="headerlink" title="1.转化成最长公共子序列求解"></a>1.转化成最长公共子序列求解</h4><p>原序列为A，把A按升序排序得到序列B，求出A，B序列的最长公共子序列，即为A的最长单调递增子序列。</p>
-<h4 id="2-带有一定动态规划思想的-O-n-2"><a href="#2-带有一定动态规划思想的-O-n-2" class="headerlink" title="2.带有一定动态规划思想的$O(n^2)$"></a>2.带有一定动态规划思想的$O(n^2)$</h4><p><strong>定义状态：</strong><br>d[i]为以第i个元素结尾的最长递增子序列的长度</p>
-<p><strong>状态转移方程：</strong><br>A[j] &lt; A[i]: d[j] = max{d[i], d[j]+1}<br>对于每一个i，令j从i-1到0遍历，当a[j] &lt; a[i]，比较当前d[i]和每一个d[j] + 1的大小，将最大值赋给d[i]<br><em>(如果看不懂的话 让我们举一个例子吧~)</em></p>
-<p><strong>e.g.</strong><br>5，3，4，8，6，7<br>&ensp;&ensp;+ 第一个数字5，d[0] = 1<br>&ensp;&ensp;+ 第一个数字3，前面没有比他还小的了，d[1] = 1<br>&ensp;&ensp;+ 第三个数字4，最长的递增子序列就是3，4，d[2] = 2<br>&ensp;&ensp;+ 第四个数组8，d[3] = 3<br>&ensp;&ensp;+ 第五个数字6，d[4] = 3, 此时的3是由d[2]+1<br>&ensp;&ensp;+ 第六个数字7，d[5] = 4</p>
-<h3 id="二、-O-nlogn-方法-二分-DP"><a href="#二、-O-nlogn-方法-二分-DP" class="headerlink" title="二、$O(nlogn)$方法(二分+DP)"></a>二、$O(nlogn)$方法(二分+DP)</h3><p>在上面的例子中：<strong>3 4 8</strong> 6相比于与 <strong>3 4</strong> 8 <strong>6</strong> 显然后者更优<br>此时的状态为：<br>d[x] = d[y], 但是 A[x] &lt; A[y], 即选择x这个情况会比y这个情况好，在这种情况下保留x一定不会丢失最优解。所以对于相同的d[?]值，只需要保留A[i]较小的情况。</p>
-<p><strong>e.g.</strong> (A、d从1开始)<br>序列A = {2, <strong>1</strong>, 5, <strong>3</strong>, 6, <strong>4</strong>, <strong>8</strong>, <strong>9</strong>, 7}<br>此时最长递增子序列(Longest Increasing Subsequence LIS) = 5</p>
-<p><em>setp1:</em> 把A[1]有序地放到d里，令d[1] = 2，就是说当只有1一个数字2的时候，长度为1的LIS的最小末尾是2。这时Len=1</p>
-<p><em>setp2:</em> 然后，把A[2]有序地放到d里，令d[1] = 1，就是说长度为1的LIS的最小末尾是1，A[1]=2已经没用了。这时Len=1</p>
-<p><em>setp3:</em> 接着，A[3] = 5，d[3] &gt; d[1]，所以令d[3]=d[2]=d[3]=5，就是说长度为2的LIS的最小末尾是5，很容易理解吧。这时候B[1..2] = 1, 5，Len＝2</p>
-<p><em>setp4:</em> 再来，d[4] = 3，它正好加在1,5之间，放在1的位置显然不合适，因为1小于3，长度为1的LIS最小末尾应该是1，这样很容易推知，长度为2的LIS最小末尾是3，于是可以把5淘汰掉，这时候B[1..2] = 1, 3，Len = 2</p>
-<p><em>setp5:</em> 继续，d[5] = 6，它在3后面，因为B[2] = 3, 而6在3后面，于是很容易可以推知B[3] = 6, 这时B[1..3] = 1, 3, 6，还是很容易理解吧？ Len = 3 了噢。</p>
-<p><em>setp6:</em> 第6个, d[6] = 4，你看它在3和6之间，于是我们就可以把6替换掉，得到B[3] = 4。B[1..3] = 1, 3, 4， Len继续等于3</p>
-<p><em>setp7:</em>  第7个, d[7] = 8，它很大，比4大，嗯。于是B[4] = 8。Len变成4了</p>
-<p><em>setp8:</em>  第8个, d[8] = 9，得到B[5] = 9，嗯。Len继续增大，到5了。</p>
-<p><em>setp9:</em>  最后一个, d[9] = 7，它在B[3] = 4和B[4] = 8之间，所以我们知道，最新的B[4] =7，B[1..5] = 1, 3, 4, 7, 9，Len = 5。</p>
-<p>于是我们知道了LIS的长度为5。</p>
-<blockquote>
-<p>hhh大概很有可能觉得疑惑的地方就是 这里的 为什么这里的7能替换8？<br>这也是为什么说 只能通过这样的方法算出 单调递增子序列的长度 而不能求出该子序列本身 why?<br>Reasons are as follows:</p>
-</blockquote>
-<p>此时取序列A = {2, <strong>1</strong>, 5, <strong>3</strong>, 6, <strong>4</strong>, <strong>8</strong>, <strong>9</strong>, 7}<br>按照上述方式序列应该变为A = {1, 3, 4, 7, 9}但是这样显然不符合序列A的单调递增模式。</p>
-<p>若此时取序列A = {2, <strong>1</strong>, 5, <strong>3</strong>, 6, <strong>4</strong>, <strong>8</strong>, <strong>9</strong>, 7, <strong>10</strong>, <strong>11</strong>}<br>answer:{1, 3, 4, 7, 9, 10, 11}<br>real answer:{1, 3, 4, 8, 9, 10, 11}</p>
-<p>若此时取序列A = {2, <strong>1</strong>, 5, <strong>3</strong>, 6, <strong>4</strong>, <strong>8</strong>, <strong>9</strong>, 7, 9, 10}<br>answer:{1, 3, 4, 7, 9, 10}<br>real answer:{1, 3, 4, 7, 9, 10}</p>
-<p><strong>especially:<br>如果添加一个新数(即增加LIS的长度)，需要替换掉前面全部的数据，此时的序列为正确的序列</strong></p>
-<p><strong><em>e.g.1.</em></strong> 若此时取序列A = {2, <strong>1</strong>, 5, <strong>3</strong>, 6, <strong>4</strong>, <strong>8</strong>, <strong>9</strong>, 7, 8, 9}<br>answer:{1, 3, 4, 7, 8, 9}<br>real answer:{1, 3, 4, 7, 8, 9}</p>
-<p><strong><em>e.g.2.</em></strong> A={2, 4, <strong>1</strong>, <strong>3</strong>, <strong>4</strong>, 0}<br><strong><em>start:</em></strong> {2, 4}<br><em>setp1:</em> {1, 4}    1替换2, 序列不正确 但是长度为2正确<br><em>setp2:</em> {1, 3}    3替换4，序列正确，长度为2正确<br><em>setp3:</em> {1, 3, 4} 4直接接在序列后，序列正确，长度为3正确      <strong>!!!此时增加了LIS长度 数据也都被替换完毕了 所以此时为正确的最长递增序列形式</strong><br><em>setp4:</em> {0, 3, 4} 0替换1，序列不正确，长度为3正确。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//先贴上别人的代码再说</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mem(a,n) memset(a,n,sizeof(a))</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1e3</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">int</span> dp[N],a[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n))</span><br><span class="line">    &#123;</span><br><span class="line">        mem(dp,INF);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            *lower_bound(dp,dp+n,a[i])=a[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,lower_bound(dp,dp+n,INF)-dp);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>感谢我徒弟的讲解与指导<br>想表达的就是这么多 虽然还是有点迷迷糊糊的 但是隐隐约约的懂了 </p>
-</blockquote>
-<p>NYOJ:单调递增子序列<br><a href="http://acm.nyist.edu.cn/JudgeOnline/problem.php?pid=17" target="_blank" rel="noopener">http://acm.nyist.edu.cn/JudgeOnline/problem.php?pid=17</a><br>Hihocoder:车队(需利用$O(nlogn)$才不会超时)<br><a href="http://hihocoder.com/problemset/problem/1684" target="_blank" rel="noopener">http://hihocoder.com/problemset/problem/1684</a></p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>请作者喝养乐多<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/alipay.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/wepay.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
         		</li>
       		
 		</ul>
 	</div>
 
-	<!-- 字数统计 -->	 
-	 
-		<div style="margin-top:0px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  | 字数统计: </span>
-        <span class="post-count">1,816字</span>
-      </span>
-    </span>
-</div>		
-	 
-      
+          
 
-      
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://yoursugars.github.io/2018/06/30/单调递增子序列/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2018/08/02/matplotlib/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          matplotlib
-        
-      </div>
-    </a>
   
   
-    <a href="/2018/06/17/xlrd/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">xlrd与xlwt</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
-  <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
-<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-  id: "https://yoursugars.github.io/2018/06/30/单调递增子序列/",
-  owner: 'yoursugars',
-  repo: 'yoursugars.github.io',
-  oauth: {
-    client_id: '4276f392874ee4f0e743',
-    client_secret: 'fa68ce1e74764fc2edb609ab46f5300cf8732c72',
-  },
-})
-gitment.render('gitment-ctn')
-</script>
-  
+    
 
 
           </div>
@@ -454,9 +244,9 @@ gitment.render('gitment-ctn')
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
