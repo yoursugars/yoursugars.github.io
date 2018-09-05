@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yoursugars.github.io">
-  <title>matplotlib | A Palace For Sugar</title>
+  <title>编译原理(1) | A Palace For Sugar</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="画图吧">
-<meta name="keywords" content="Python">
+  <meta name="description" content="其实老师之前说过的话或者提的意见其实都还是很有建设性的。   1.为什么变量名不能使用数字？假如变量名允许以数字开头的话，那么语法分析器在解析一个全部为数字的字串的时候，就无法判断它是一个数字常量还是一个变量名了2.推荐了几本书  1).程序员的自我修养  2).深入理解Java虚拟机  3).龙书虎书？  4).《编译原理》清华大学 吕映之/张素琴3.需要读gcc的源代码：http://gcc.">
+<meta name="keywords" content="编译原理,课程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="matplotlib">
-<meta property="og:url" content="https://yoursugars.github.io/2018/08/02/matplotlib/index.html">
+<meta property="og:title" content="编译原理(1)">
+<meta property="og:url" content="https://yoursugars.github.io/2018/09/05/编译原理-1/index.html">
 <meta property="og:site_name" content="A Palace For Sugar">
-<meta property="og:description" content="画图吧">
+<meta property="og:description" content="其实老师之前说过的话或者提的意见其实都还是很有建设性的。   1.为什么变量名不能使用数字？假如变量名允许以数字开头的话，那么语法分析器在解析一个全部为数字的字串的时候，就无法判断它是一个数字常量还是一个变量名了2.推荐了几本书  1).程序员的自我修养  2).深入理解Java虚拟机  3).龙书虎书？  4).《编译原理》清华大学 吕映之/张素琴3.需要读gcc的源代码：http://gcc.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-02T09:22:29.000Z">
+<meta property="og:updated_time" content="2018-09-05T11:29:08.287Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="matplotlib">
-<meta name="twitter:description" content="画图吧">
+<meta name="twitter:title" content="编译原理(1)">
+<meta name="twitter:description" content="其实老师之前说过的话或者提的意见其实都还是很有建设性的。   1.为什么变量名不能使用数字？假如变量名允许以数字开头的话，那么语法分析器在解析一个全部为数字的字串的时候，就无法判断它是一个数字常量还是一个变量名了2.推荐了几本书  1).程序员的自我修养  2).深入理解Java虚拟机  3).龙书虎书？  4).《编译原理》清华大学 吕映之/张素琴3.需要读gcc的源代码：http://gcc.">
   
     <link rel="alternative" href="/atom.xml" title="A Palace For Sugar" type="application/atom+xml">
   
@@ -159,20 +159,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-matplotlib" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-编译原理-1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      matplotlib
+      编译原理(1)
     </h1>
   
 
         
-        <a href="/2018/08/02/matplotlib/" class="archive-article-date">
-  	<time datetime="2018-08-02T08:37:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-02</time>
+        <a href="/2018/09/05/编译原理-1/" class="archive-article-date">
+  	<time datetime="2018-09-05T11:11:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-05</time>
 </a>
 		
 		<span class="archive-article-date">
@@ -188,10 +188,11 @@
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>画图吧</p>
-<a id="more"></a>
-<h2 id="条形图"><a href="#条形图" class="headerlink" title="条形图"></a>条形图</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">#条形图</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">plt.style.use(<span class="string">'ggplot'</span>)</span><br><span class="line"><span class="comment">#模拟ggplot2风格</span></span><br><span class="line">customers=[<span class="string">'Sugar'</span>, <span class="string">'Xuyaqi'</span>, <span class="string">'YYX'</span>, <span class="string">'XYQ'</span>, <span class="string">'Gray'</span>, <span class="string">'Dean'</span>]</span><br><span class="line">customers_index = range(len(customers))</span><br><span class="line"><span class="comment">#创建客户索引列表</span></span><br><span class="line">customers_sale=[<span class="number">127</span>, <span class="number">190</span>, <span class="number">245</span>, <span class="number">23</span>, <span class="number">85</span>, <span class="number">56</span>]</span><br><span class="line">figure = plt.figure()</span><br><span class="line">ax1 = figure.add_subplot(<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">ax1.bar(customers_index, customers_sale, align=<span class="string">'center'</span>, color = <span class="string">'darkblue'</span>)</span><br><span class="line">ax1.xaxis.set_ticks_position(<span class="string">'bottom'</span>)</span><br><span class="line">ax1.yaxis.set_ticks_position(<span class="string">'left'</span>)</span><br><span class="line">plt.xticks(customers_index, customers, rotation = <span class="number">0</span>, fontsize = <span class="string">'small'</span>)</span><br><span class="line">plt.xlabel(<span class="string">'Customer Name'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'Sale Amount'</span>)</span><br><span class="line">plt.title(<span class="string">'What you want?'</span>)</span><br><span class="line">plt.savefig(<span class="string">'bar_plot.png'</span>, dpi = <span class="number">400</span>, bbox_inches = <span class="string">'tight'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<h2 id="直方图"><a href="#直方图" class="headerlink" title="直方图"></a>直方图</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">#直方图</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">plt.style.use(<span class="string">'ggplot'</span>)</span><br><span class="line">mu1, mu2, sigma = <span class="number">100</span>, <span class="number">130</span>, <span class="number">15</span></span><br><span class="line">x1 = mu1+sigma*np.random.random(<span class="number">10000</span>)</span><br><span class="line">x2 = mu2+sigma*np.random.random(<span class="number">10000</span>)</span><br><span class="line"><span class="comment">#创建两个正态分布变量x1和x2</span></span><br><span class="line">fig = plt.figure()</span><br><span class="line">ax1 = fig.add_subplot(<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">n, bins, patches = ax1.hist(x1, bins = <span class="number">50</span>, density = <span class="keyword">True</span>, color=<span class="string">'darkgreen'</span>)</span><br><span class="line">b, bins, patches = ax1.hist(x2, bins = <span class="number">50</span>, density = <span class="keyword">False</span>, color = <span class="string">'orange'</span>, alpha = <span class="number">0.5</span>)</span><br><span class="line"><span class="comment">#bins表示每个变量的值被分为50份 normed=False表示显示频率分布而不是概率密度 alpha=0.5表示透明</span></span><br><span class="line"></span><br><span class="line">ax1.xaxis.set_ticks_position(<span class="string">'bottom'</span>)</span><br><span class="line">ax1.yaxis.set_ticks_position(<span class="string">'left'</span>)</span><br><span class="line">plt.xlabel(<span class="string">'Bins'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'Number of Value in Bin'</span>)</span><br><span class="line">fig.suptitle(<span class="string">'Histograms'</span>, fontsize=<span class="number">14</span>, fontweight=<span class="string">'bold'</span>)</span><br><span class="line">ax1.set_title(<span class="string">'Two Frequency Distributions'</span>)</span><br><span class="line">plt.savefig(<span class="string">'histogram.png'</span>, dpi=<span class="number">400</span>, bbox_inches = <span class="string">'tight'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+        <p>其实老师之前说过的话或者提的意见其实都还是很有建设性的。</p>
+<blockquote>
+</blockquote>
+<p>1.为什么变量名不能使用数字？<br>假如变量名允许以数字开头的话，那么语法分析器在解析一个全部为数字的字串的时候，就无法判断它是一个数字常量还是一个变量名了<br>2.推荐了几本书<br>  1).程序员的自我修养<br>  2).深入理解Java虚拟机<br>  3).龙书虎书？<br>  4).《编译原理》清华大学 吕映之/张素琴<br>3.需要读gcc的源代码：<a href="http://gcc.gnu.org" target="_blank" rel="noopener">http://gcc.gnu.org</a><br>使用工具:source insight<br>找到了一个博客：<a href="https://blog.csdn.net/sonicling/article/details/6702031" target="_blank" rel="noopener">https://blog.csdn.net/sonicling/article/details/6702031</a></p>
+
       
 
       
@@ -235,7 +236,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">编译原理</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">课程</a>
         		</li>
       		
 		</ul>
@@ -248,7 +253,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  | 字数统计: </span>
-        <span class="post-count">312字</span>
+        <span class="post-count">177字</span>
       </span>
     </span>
 </div>		
@@ -302,7 +307,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://yoursugars.github.io/2018/08/02/matplotlib/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://yoursugars.github.io/2018/09/05/编译原理-1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -316,18 +321,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/08/05/SPFA与差分约束/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          SPFA与差分约束
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/06/30/单调递增子序列/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">单调递增子序列</div>
+    <a href="/2018/08/22/太阳全盘图像的去云处理/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">太阳全盘图像的去云处理</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -366,7 +362,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "https://yoursugars.github.io/2018/08/02/matplotlib/",
+  id: "https://yoursugars.github.io/2018/09/05/编译原理-1/",
   owner: 'yoursugars',
   repo: 'yoursugars.github.io',
   oauth: {

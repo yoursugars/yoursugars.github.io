@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yoursugars.github.io/"/>
-  <updated>2018-08-22T14:09:37.181Z</updated>
+  <updated>2018-09-05T11:29:08.287Z</updated>
   <id>https://yoursugars.github.io/</id>
   
   <author>
@@ -17,13 +17,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>编译原理(1)</title>
+    <link href="https://yoursugars.github.io/2018/09/05/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-1/"/>
+    <id>https://yoursugars.github.io/2018/09/05/编译原理-1/</id>
+    <published>2018-09-05T11:11:07.000Z</published>
+    <updated>2018-09-05T11:29:08.287Z</updated>
+    
+    <content type="html"><![CDATA[<p>其实老师之前说过的话或者提的意见其实都还是很有建设性的。</p><blockquote></blockquote><p>1.为什么变量名不能使用数字？<br>假如变量名允许以数字开头的话，那么语法分析器在解析一个全部为数字的字串的时候，就无法判断它是一个数字常量还是一个变量名了<br>2.推荐了几本书<br>  1).程序员的自我修养<br>  2).深入理解Java虚拟机<br>  3).龙书虎书？<br>  4).《编译原理》清华大学 吕映之/张素琴<br>3.需要读gcc的源代码：<a href="http://gcc.gnu.org" target="_blank" rel="noopener">http://gcc.gnu.org</a><br>使用工具:source insight<br>找到了一个博客：<a href="https://blog.csdn.net/sonicling/article/details/6702031" target="_blank" rel="noopener">https://blog.csdn.net/sonicling/article/details/6702031</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;其实老师之前说过的话或者提的意见其实都还是很有建设性的。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;1.为什么变量名不能使用数字？&lt;br&gt;假如变量名允许以数字开头的话，那么语法分析器在解析一个全部为数字的字串的时候，就无法判断它是一个数字常量还是一
+      
+    
+    </summary>
+    
+    
+      <category term="编译原理" scheme="https://yoursugars.github.io/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
+    
+      <category term="课程" scheme="https://yoursugars.github.io/tags/%E8%AF%BE%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
     <title>太阳全盘图像的去云处理</title>
     <link href="https://yoursugars.github.io/2018/08/22/%E5%A4%AA%E9%98%B3%E5%85%A8%E7%9B%98%E5%9B%BE%E5%83%8F%E7%9A%84%E5%8E%BB%E4%BA%91%E5%A4%84%E7%90%86/"/>
     <id>https://yoursugars.github.io/2018/08/22/太阳全盘图像的去云处理/</id>
     <published>2018-08-22T13:33:50.000Z</published>
-    <updated>2018-08-22T14:09:37.181Z</updated>
+    <updated>2018-09-05T11:13:05.481Z</updated>
     
-    <content type="html"><![CDATA[<p>应该反思一下为什么写作的时候没有什么想写的 就在反思中总结进步嘛<br>一张图送给自己：<br><img src="/2018/08/22/太阳全盘图像的去云处理/a.jpg" alt="avatar"></p><a id="more"></a><h2 id="一、评分标准"><a href="#一、评分标准" class="headerlink" title="一、评分标准"></a>一、评分标准</h2><p>没有想到的：</p><h3 id="1-图像的异常处理"><a href="#1-图像的异常处理" class="headerlink" title="1.图像的异常处理"></a>1.图像的异常处理</h3><p>我记得去年第一轮淘汰赛 就好像是对成绩进行分析 那个时候都记得去除异常值了 这次光想着怎么预处理图像了 完全忘记了还要去除异常值。</p><h3 id="2-去云效果评价模型"><a href="#2-去云效果评价模型" class="headerlink" title="2.去云效果评价模型"></a>2.去云效果评价模型</h3><p>如果使用了那么多模型 应该通过评价来表明处理效果 其实就是如果要你做什么处理 就可以通过评价模型 成为加分项</p><h3 id="3-云量分级"><a href="#3-云量分级" class="headerlink" title="3.云量分级"></a>3.云量分级</h3><p>云量分级之后需要仔细说明169张图的分级&amp;给出多个评价指标 这个因为我写结果分析写的太迟了 </p><h2 id="二、自我反思"><a href="#二、自我反思" class="headerlink" title="二、自我反思"></a>二、自我反思</h2><blockquote><p>1.数据处理：异常处理&amp;这次用的registax6和PS<br>  2.格式不要想着最后调因为我们最后可能及其没有时间<br>  3.摘要提前改 以及 结果分析提前写好<br>  4.最好不要捣鼓一些非常麻烦的软件 因为极有可能到最后还调不出来<br>  5.问题分析提前写多一点 到时候可以删<br>  6.主动看模型 找代码</p></blockquote><h2 id="三、对registax6的处理准备"><a href="#三、对registax6的处理准备" class="headerlink" title="三、对registax6的处理准备"></a>三、对registax6的处理准备</h2><p>  1.软件下载：(3M对处理图像的软件已经够小了)<br>  <a href="http://www.astronomie.be/registax/download.html" target="_blank" rel="noopener">http://www.astronomie.be/registax/download.html</a><br>  2.参考教程<br>  <a href="https://jingyan.baidu.com/article/154b4631b2419328ca8f4104.html?qq-pf-to=pcqq.c2c" target="_blank" rel="noopener">https://jingyan.baidu.com/article/154b4631b2419328ca8f4104.html?qq-pf-to=pcqq.c2c</a><br>  <a href="http://familystar.org.tw/component/option,com_smf/Itemid,45/topic,14052.0" target="_blank" rel="noopener">http://familystar.org.tw/component/option,com_smf/Itemid,45/topic,14052.0</a><br>  <a href="http://blog.sina.com.cn/s/blog_4a5215000101q4rs.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_4a5215000101q4rs.html</a><br>  3.主要是因为是fts文件 registax6是可以处理fts的 但是它处理的一般是一整个视频 通过叠加锐化 我一开始总是用一张fts图像来处理 就处理不了 后来选择一系列图像之后才稍微好一线</p>]]></content>
+    <content type="html"><![CDATA[<p>应该反思一下为什么写作的时候没有什么想写的 就在反思中总结进步嘛<br>一张图送给自己：<br><img src="/2018/08/22/太阳全盘图像的去云处理/a.jpg" alt="avatar"></p><a id="more"></a><h2 id="一、评分标准"><a href="#一、评分标准" class="headerlink" title="一、评分标准"></a>一、评分标准</h2><p>没有想到的：</p><h3 id="1-图像的异常处理"><a href="#1-图像的异常处理" class="headerlink" title="1.图像的异常处理"></a>1.图像的异常处理</h3><p>我记得去年第一轮淘汰赛 就好像是对成绩进行分析 那个时候都记得去除异常值了 这次光想着怎么预处理图像了 完全忘记了还要去除异常值。</p><h3 id="2-去云效果评价模型"><a href="#2-去云效果评价模型" class="headerlink" title="2.去云效果评价模型"></a>2.去云效果评价模型</h3><p>如果使用了那么多模型 应该通过评价来表明处理效果 其实就是如果要你做什么处理 就可以通过评价模型 成为加分项</p><h3 id="3-云量分级"><a href="#3-云量分级" class="headerlink" title="3.云量分级"></a>3.云量分级</h3><p>云量分级之后需要仔细说明169张图的分级&amp;给出多个评价指标 这个因为我写结果分析写的太迟了 </p><h2 id="二、自我反思"><a href="#二、自我反思" class="headerlink" title="二、自我反思"></a>二、自我反思</h2><blockquote><p>1.数据处理：异常处理&amp;这次用的registax6和PS<br>  2.格式不要想着最后调因为我们最后可能及其没有时间<br>  3.摘要提前改 以及 结果分析提前写好<br>  4.最好不要捣鼓一些非常麻烦的软件 因为极有可能到最后还调不出来<br>  5.问题分析提前写多一点 到时候可以删<br>  6.主动看模型 找代码</p></blockquote><h2 id="三、对registax6的处理准备"><a href="#三、对registax6的处理准备" class="headerlink" title="三、对registax6的处理准备"></a>三、对registax6的处理准备</h2><p>  1.软件下载：(3M对处理图像的软件已经够小了)<br>  <a href="http://www.astronomie.be/registax/download.html" target="_blank" rel="noopener">http://www.astronomie.be/registax/download.html</a><br>  2.参考教程<br>  <a href="https://jingyan.baidu.com/article/154b4631b2419328ca8f4104.html?qq-pf-to=pcqq.c2c" target="_blank" rel="noopener">https://jingyan.baidu.com/article/154b4631b2419328ca8f4104.html?qq-pf-to=pcqq.c2c</a><br>  <a href="http://familystar.org.tw/component/option,com_smf/Itemid,45/topic,14052.0" target="_blank" rel="noopener">http://familystar.org.tw/component/option,com_smf/Itemid,45/topic,14052.0</a><br>  <a href="http://blog.sina.com.cn/s/blog_4a5215000101q4rs.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_4a5215000101q4rs.html</a><br>  3.主要是因为是fts文件 registax6是可以处理fts的 但是它处理的一般是一整个视频 通过叠加锐化 我一开始总是用一张fts图像来处理 就处理不了 后来选择一系列图像之后才稍微好一线</p><h2 id="四、envi5-3-去云补丁"><a href="#四、envi5-3-去云补丁" class="headerlink" title="四、envi5.3+去云补丁"></a>四、envi5.3+去云补丁</h2><p>   1.下载地址：</p>]]></content>
     
     <summary type="html">
     
