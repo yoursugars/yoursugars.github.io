@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yoursugars.github.io/"/>
-  <updated>2018-09-05T12:03:53.309Z</updated>
+  <updated>2018-09-05T13:05:07.575Z</updated>
   <id>https://yoursugars.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://yoursugars.github.io/2018/09/05/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-1/"/>
     <id>https://yoursugars.github.io/2018/09/05/编译原理-1/</id>
     <published>2018-09-05T11:11:07.000Z</published>
-    <updated>2018-09-05T12:03:53.309Z</updated>
+    <updated>2018-09-05T13:05:07.575Z</updated>
     
-    <content type="html"><![CDATA[<p>其实老师之前说过的话或者提的意见其实都还是很有建设性的。</p><blockquote><p>1.为什么变量名不能使用数字？<br>假如变量名允许以数字开头的话，那么语法分析器在解析一个全部为数字的字串的时候，就无法判断它是一个数字常量还是一个变量名了<br>2.推荐了几本书<br>  1).程序员的自我修养<br>  2).深入理解Java虚拟机<br>  3).龙书虎书？<br>  4).《编译原理》清华大学 吕映之/张素琴<br>3.需要读gcc的源代码：<a href="http://gcc.gnu.org" target="_blank" rel="noopener">http://gcc.gnu.org</a><br>使用工具:source insight<br>找到了一个博客：<a href="https://blog.csdn.net/sonicling/article/details/6702031" target="_blank" rel="noopener">https://blog.csdn.net/sonicling/article/details/6702031</a></p></blockquote><p>以上算是前言吧 怎么说呢 还是想好好学学这门课 毕竟像“专业素养“这样的东西就很玄</p><a id="more"></a><h2 id="一、引论"><a href="#一、引论" class="headerlink" title="一、引论"></a>一、引论</h2><h3 id="1-1-课堂笔记"><a href="#1-1-课堂笔记" class="headerlink" title="1.1.课堂笔记"></a>1.1.课堂笔记</h3><p> 1).硬件：并行/ 软件：抽象<br> 2).什么是高级语言？与机器无关<br> 3).编译和解释：<br>    编译：生成目标程序 优点：效率高,生成的目标程序直接运行时速度快<br>    解释：边解释边运行 优点：方便诊断错误<br> 4).针对C语言：编译运行<br>    针对Java语言：首先编译为字节码(bytecode)的形式—&gt;利用Java虚拟机解释执行<br> 5).语言处理系统<br> <img src="/2018/09/05/编译原理-1/a1.png" alt="一个语言处理系统"></p>]]></content>
+    <content type="html"><![CDATA[<p>其实老师之前说过的话或者提的意见其实都还是很有建设性的。</p><blockquote><p>1.为什么变量名不能使用数字？<br>假如变量名允许以数字开头的话，那么语法分析器在解析一个全部为数字的字串的时候，就无法判断它是一个数字常量还是一个变量名了<br>2.推荐了几本书<br>  1).程序员的自我修养<br>  2).深入理解Java虚拟机<br>  3).龙书虎书？<br>  4).《编译原理》清华大学 吕映之/张素琴<br>3.需要读gcc的源代码：<a href="http://gcc.gnu.org" target="_blank" rel="noopener">http://gcc.gnu.org</a><br>使用工具:source insight<br>找到了一个博客：<a href="https://blog.csdn.net/sonicling/article/details/6702031" target="_blank" rel="noopener">https://blog.csdn.net/sonicling/article/details/6702031</a></p></blockquote><p>以上算是前言吧 怎么说呢 还是想好好学学这门课 毕竟像“专业素养“这样的东西就很玄</p><a id="more"></a><h2 id="一、引论"><a href="#一、引论" class="headerlink" title="一、引论"></a>一、引论</h2><h3 id="1-1-课堂笔记"><a href="#1-1-课堂笔记" class="headerlink" title="1.1.课堂笔记"></a>1.1.课堂笔记</h3><p> 1).硬件：并行/ 软件：抽象<br> 2).什么是高级语言？与机器无关<br> 3).编译和解释：<br>    <strong>编译</strong>：生成目标程序 优点：效率高,生成的目标程序直接运行时速度快<br>    <strong>解释</strong>：边解释边运行 优点：方便诊断错误<br> 4).针对C语言：编译运行<br>    针对Java语言：首先编译为字节码(bytecode)的形式—&gt;利用Java虚拟机解释执行<br> 5).语言处理系统<br> <img src="/2018/09/05/编译原理-1/a1.png" alt="一个语言处理系统"><br> |工具(e.g. in C)|作用|<br> | :-: | :-: |<br> |预处理器|替换宏(#define)、替换头文件(#include)、预编译(#if def):将头文件插入到本文件中，增加行号等|<br> |编译器|产生二进制代码or汇编语言|<br> |汇编器|生成可重定位的机器代码|<br> |链接器|在运行库函数时定位|<br> |加载器|加载到内存中|<br> 6).register变量：设置变量在寄存器中，存取速度快<br> 7).inline(内联函数):在本地中插入该函数，<strong>就地展开</strong>,速度快。为什么还要调用函数？代码简洁 以时间换空间。</p><h3 id="1-2-课后扩展"><a href="#1-2-课后扩展" class="headerlink" title="1.2.课后扩展"></a>1.2.课后扩展</h3><p>  1).静态策略：在编译时就可以确定的问题<br>     动态策略：只允许在运行程序时做出的策略<br>  2).</p>]]></content>
     
     <summary type="html">
     
