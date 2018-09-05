@@ -8,18 +8,20 @@
   <link rel="dns-prefetch" href="https://yoursugars.github.io">
   <title>编译原理(1) | A Palace For Sugar</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="其实老师之前说过的话或者提的意见其实都还是很有建设性的。   1.为什么变量名不能使用数字？假如变量名允许以数字开头的话，那么语法分析器在解析一个全部为数字的字串的时候，就无法判断它是一个数字常量还是一个变量名了2.推荐了几本书  1).程序员的自我修养  2).深入理解Java虚拟机  3).龙书虎书？  4).《编译原理》清华大学 吕映之/张素琴3.需要读gcc的源代码：http://gcc.">
+  <meta name="description" content="其实老师之前说过的话或者提的意见其实都还是很有建设性的。  1.为什么变量名不能使用数字？假如变量名允许以数字开头的话，那么语法分析器在解析一个全部为数字的字串的时候，就无法判断它是一个数字常量还是一个变量名了2.推荐了几本书  1).程序员的自我修养  2).深入理解Java虚拟机  3).龙书虎书？  4).《编译原理》清华大学 吕映之/张素琴3.需要读gcc的源代码：http://gcc.g">
 <meta name="keywords" content="编译原理,课程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="编译原理(1)">
 <meta property="og:url" content="https://yoursugars.github.io/2018/09/05/编译原理-1/index.html">
 <meta property="og:site_name" content="A Palace For Sugar">
-<meta property="og:description" content="其实老师之前说过的话或者提的意见其实都还是很有建设性的。   1.为什么变量名不能使用数字？假如变量名允许以数字开头的话，那么语法分析器在解析一个全部为数字的字串的时候，就无法判断它是一个数字常量还是一个变量名了2.推荐了几本书  1).程序员的自我修养  2).深入理解Java虚拟机  3).龙书虎书？  4).《编译原理》清华大学 吕映之/张素琴3.需要读gcc的源代码：http://gcc.">
+<meta property="og:description" content="其实老师之前说过的话或者提的意见其实都还是很有建设性的。  1.为什么变量名不能使用数字？假如变量名允许以数字开头的话，那么语法分析器在解析一个全部为数字的字串的时候，就无法判断它是一个数字常量还是一个变量名了2.推荐了几本书  1).程序员的自我修养  2).深入理解Java虚拟机  3).龙书虎书？  4).《编译原理》清华大学 吕映之/张素琴3.需要读gcc的源代码：http://gcc.g">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-05T11:29:08.287Z">
+<meta property="og:image" content="https://yoursugars.github.io/2018/09/05/编译原理-1/a1.png">
+<meta property="og:updated_time" content="2018-09-05T12:03:53.309Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="编译原理(1)">
-<meta name="twitter:description" content="其实老师之前说过的话或者提的意见其实都还是很有建设性的。   1.为什么变量名不能使用数字？假如变量名允许以数字开头的话，那么语法分析器在解析一个全部为数字的字串的时候，就无法判断它是一个数字常量还是一个变量名了2.推荐了几本书  1).程序员的自我修养  2).深入理解Java虚拟机  3).龙书虎书？  4).《编译原理》清华大学 吕映之/张素琴3.需要读gcc的源代码：http://gcc.">
+<meta name="twitter:description" content="其实老师之前说过的话或者提的意见其实都还是很有建设性的。  1.为什么变量名不能使用数字？假如变量名允许以数字开头的话，那么语法分析器在解析一个全部为数字的字串的时候，就无法判断它是一个数字常量还是一个变量名了2.推荐了几本书  1).程序员的自我修养  2).深入理解Java虚拟机  3).龙书虎书？  4).《编译原理》清华大学 吕映之/张素琴3.需要读gcc的源代码：http://gcc.g">
+<meta name="twitter:image" content="https://yoursugars.github.io/2018/09/05/编译原理-1/a1.png">
   
     <link rel="alternative" href="/atom.xml" title="A Palace For Sugar" type="application/atom+xml">
   
@@ -190,8 +192,11 @@
       
         <p>其实老师之前说过的话或者提的意见其实都还是很有建设性的。</p>
 <blockquote>
-</blockquote>
 <p>1.为什么变量名不能使用数字？<br>假如变量名允许以数字开头的话，那么语法分析器在解析一个全部为数字的字串的时候，就无法判断它是一个数字常量还是一个变量名了<br>2.推荐了几本书<br>  1).程序员的自我修养<br>  2).深入理解Java虚拟机<br>  3).龙书虎书？<br>  4).《编译原理》清华大学 吕映之/张素琴<br>3.需要读gcc的源代码：<a href="http://gcc.gnu.org" target="_blank" rel="noopener">http://gcc.gnu.org</a><br>使用工具:source insight<br>找到了一个博客：<a href="https://blog.csdn.net/sonicling/article/details/6702031" target="_blank" rel="noopener">https://blog.csdn.net/sonicling/article/details/6702031</a></p>
+</blockquote>
+<p>以上算是前言吧 怎么说呢 还是想好好学学这门课 毕竟像“专业素养“这样的东西就很玄</p>
+<a id="more"></a>
+<h2 id="一、引论"><a href="#一、引论" class="headerlink" title="一、引论"></a>一、引论</h2><h3 id="1-1-课堂笔记"><a href="#1-1-课堂笔记" class="headerlink" title="1.1.课堂笔记"></a>1.1.课堂笔记</h3><p> 1).硬件：并行/ 软件：抽象<br> 2).什么是高级语言？与机器无关<br> 3).编译和解释：<br>    编译：生成目标程序 优点：效率高,生成的目标程序直接运行时速度快<br>    解释：边解释边运行 优点：方便诊断错误<br> 4).针对C语言：编译运行<br>    针对Java语言：首先编译为字节码(bytecode)的形式—&gt;利用Java虚拟机解释执行<br> 5).语言处理系统<br> <img src="/2018/09/05/编译原理-1/a1.png" alt="一个语言处理系统"></p>
 
       
 
@@ -253,7 +258,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  | 字数统计: </span>
-        <span class="post-count">177字</span>
+        <span class="post-count">338字</span>
       </span>
     </span>
 </div>		
@@ -540,7 +545,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Selenium</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -552,11 +561,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Selenium</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
