@@ -84,9 +84,9 @@
 				
 					<a class="github" target="_blank" href="https://github.com/yoursugars" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="https://weibo.com/3647201422/info" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="weibo" target="_blank" href="http://baidu.com" title="weibo"><i class="icon-weibo"></i></a>
 		        
-					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/xu-ya-qi-77-65/activities" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="zhihu" target="_blank" href="http://baidu.com" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
 					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 		        
@@ -127,9 +127,9 @@
 					
 						<a class="github" target="_blank" href="https://github.com/yoursugars" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="https://weibo.com/3647201422/info" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="weibo" target="_blank" href="http://baidu.com" title="weibo"><i class="icon-weibo"></i></a>
 			        
-						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/xu-ya-qi-77-65/activities" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="zhihu" target="_blank" href="http://baidu.com" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
 						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 			        
@@ -205,11 +205,26 @@
 <pre><code>多道特点：1.主存中同时存放几道互相独立的程序
           2.宏观上并行，微观上串行
 </code></pre><h4 id="4-分时技术"><a href="#4-分时技术" class="headerlink" title="4).分时技术"></a>4).分时技术</h4><pre><code>1.脱机操作方式：程序运行过程中不能直接实施控制，需预料到所有的问题和情况
-2.联机操作方式：能直接控制程序的运行
+2.联机操作方式：用户能直接控制程序的运行
 
 分时技术可以使一台计算机同时为多个终端用户服务成为可能：将处理机时间划分成很短的时间片，轮流地分配各个用户程序使用。
 </code></pre><h3 id="1-2-操作系统的定义和特性"><a href="#1-2-操作系统的定义和特性" class="headerlink" title="1.2.操作系统的定义和特性"></a>1.2.操作系统的定义和特性</h3><pre><code>组成操作系统的软件包括：系统软件、应用软件和工具软件
 操作系统的宗旨：**提高计算机系统的效率、方便用户的使用**
+
+1).分时通过进程号、用户号标识
+多用户一定是多任务(Unix/Linux)
+多任务不一定是多用户(windows pro)
+
+2).
+**并发**：多个任务在一个时间段上同时做
+**共享**：并发必共享
+**不确定**：可以处理随机发生的多个事件
+**虚拟**：比裸机工作更强
+</code></pre><h3 id="1-3-中断及其处理"><a href="#1-3-中断及其处理" class="headerlink" title="1.3.中断及其处理"></a>1.3.中断及其处理</h3><blockquote>
+<p>中断是指某个事件(例如电源掉电、定点加法溢出或者I/O传输结束)发生时，系统中止先行程序的运行、中断返回(由中断返回指令实现)这几个步骤。而中断过程是由一个中断信号引发的。</p>
+</blockquote>
+<p>中断过程：硬件实现的中断进入-&gt;软件的中断处理过程-&gt;中断返回(由中断返回指令实现)<br>而中断过程是由一个中断信号引发的。</p>
+<pre><code>3).
 </code></pre>
       
 
@@ -1235,19 +1250,19 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Selenium</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">算法模板</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Selenium</a>
               </li>
              
               <li class="article-tag-list-item">
