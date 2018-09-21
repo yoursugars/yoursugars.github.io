@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yoursugars.github.io/"/>
-  <updated>2018-09-20T10:02:58.184Z</updated>
+  <updated>2018-09-21T04:35:22.369Z</updated>
   <id>https://yoursugars.github.io/</id>
   
   <author>
@@ -21,17 +21,57 @@
     <link href="https://yoursugars.github.io/2018/09/18/%E5%AF%86%E7%A0%81%E5%AD%A6-%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97/"/>
     <id>https://yoursugars.github.io/2018/09/18/密码学-欧几里得/</id>
     <published>2018-09-18T12:53:56.000Z</published>
-    <updated>2018-09-20T10:02:58.184Z</updated>
+    <updated>2018-09-21T04:35:22.369Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="preparation"><a href="#preparation" class="headerlink" title="preparation"></a>preparation</h2><blockquote><p>加法消去律：如果(a+b)≡(a+c) mod m, 则b ≡ c mod m<br><br>乘法消去律：对于(a×b)≡(a×c) mod m，若gcd(a,m)=1，则b ≡ c mod m<br><br>(a和m互素)</p></blockquote><h3 id="逆元"><a href="#逆元" class="headerlink" title="逆元"></a>逆元</h3><h4 id="1-加法逆元-x-y-0"><a href="#1-加法逆元-x-y-0" class="headerlink" title="1.加法逆元 x-y=0"></a>1.加法逆元 x-y=0</h4><table><thead><tr><th style="text-align:center">Z<sub>4</sub></th><th style="text-align:center">0</th><th style="text-align:center">1</th><th style="text-align:center">2</th><th style="text-align:center">3</th></tr></thead><tbody><tr><td style="text-align:center">0</td><td style="text-align:center">0</td><td style="text-align:center">1</td><td style="text-align:center">2</td><td style="text-align:center">3</td></tr><tr><td style="text-align:center">1</td><td style="text-align:center">1</td><td style="text-align:center">2</td><td style="text-align:center">3</td><td style="text-align:center">0</td></tr><tr><td style="text-align:center">3</td><td style="text-align:center">2</td><td style="text-align:center">3</td><td style="text-align:center">0</td><td style="text-align:center">1</td></tr><tr><td style="text-align:center">4</td><td style="text-align:center">3</td><td style="text-align:center">0</td><td style="text-align:center">1</td><td style="text-align:center">2</td></tr></tbody></table><p>此时很清楚的看出来：<br><br>1). (0+4)<strong>mod</strong>4=0<br><br>2). (2+2)<strong>mod</strong>4=0<br><br>3). (1+3)<strong>mod</strong>4=0<br></p><p>此时0的加法逆元为4, 2的加法逆元为2, 1的加法逆元为3</p><h4 id="2-乘法逆元-x-y-1-1"><a href="#2-乘法逆元-x-y-1-1" class="headerlink" title="2.乘法逆元 x*y-1=1"></a>2.乘法逆元 x*y<sup>-1</sup>=1</h4><p>1).取非素数4<br>|Z<sub>4<sub>|0|1|2|3|<br>|:–:|:–:|:–:|:–:|:–:|<br>|0|0|0|0|0|<br>|1|0|1|2|3|<br>|2|0|2|0|2|<br>|3|0|3|2|1|</sub></sub></p><p>由于4不是素数，所以只有gcd(x,4)=1的有逆元：<br>此时0和2没有乘法逆元，而1的乘法逆元是1, 因为1×1=1. 3的乘法逆元是3, 因为3×3=1(行标和列标)</p><p>2).若取素数5：<br>|Z<sub>5<sub>|0|1|2|3|4|<br>|:–:|:–:|:–:|:–:|:–:|:–:|<br>|0|0|0|0|0|0|<br>|1|0|<strong>1</strong>|2|3|4|<br>|2|0|2|4|<strong>1</strong>|3|<br>|3|0|3|<strong>1</strong>|4|2|<br>|4|0|4|3|2|<strong>1</strong>|</sub></sub></p><p>此时1,2,3,4均有乘法逆元</p><p><strong>Q</strong>:乘法消去律,为什么一定要求要满足gcd(a,m)=1?<br><br><strong>A</strong>:模m的乘法运算返回的结果是0~(m-1)之间的数，如果乘数a和模数m有除1以外的共同因子,那么不会产生完整的余数集合.</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="preparation"><a href="#preparation" class="headerlink" title="preparation"></a>preparation</h2><blockquote><p>加法消去律：如果(a+b)≡(a+c) mod m, 则b ≡ c mod m<br><br>乘法消去律：对于(a×b)≡(a×c) mod m，若gcd(a,m)=1，则b ≡ c mod m<br><br>(a和m互素)</p></blockquote><h3 id="逆元"><a href="#逆元" class="headerlink" title="逆元"></a>逆元</h3><h4 id="1-加法逆元-x-y-0"><a href="#1-加法逆元-x-y-0" class="headerlink" title="1.加法逆元 x-y=0"></a>1.加法逆元 x-y=0</h4><table><thead><tr><th style="text-align:center">Z<sub>4</sub></th><th style="text-align:center">0</th><th style="text-align:center">1</th><th style="text-align:center">2</th><th style="text-align:center">3</th></tr></thead><tbody><tr><td style="text-align:center">0</td><td style="text-align:center">0</td><td style="text-align:center">1</td><td style="text-align:center">2</td><td style="text-align:center">3</td></tr><tr><td style="text-align:center">1</td><td style="text-align:center">1</td><td style="text-align:center">2</td><td style="text-align:center">3</td><td style="text-align:center">0</td></tr><tr><td style="text-align:center">3</td><td style="text-align:center">2</td><td style="text-align:center">3</td><td style="text-align:center">0</td><td style="text-align:center">1</td></tr><tr><td style="text-align:center">4</td><td style="text-align:center">3</td><td style="text-align:center">0</td><td style="text-align:center">1</td><td style="text-align:center">2</td></tr></tbody></table><p>此时很清楚的看出来：<br><br>1). (0+4)<strong>mod</strong>4=0<br><br>2). (2+2)<strong>mod</strong>4=0<br><br>3). (1+3)<strong>mod</strong>4=0<br><br><a id="more"></a><br>此时0的加法逆元为4, 2的加法逆元为2, 1的加法逆元为3</p><h4 id="2-乘法逆元-x-y-1-1"><a href="#2-乘法逆元-x-y-1-1" class="headerlink" title="2.乘法逆元 x*y-1=1"></a>2.乘法逆元 x*y<sup>-1</sup>=1</h4><p>1).取非素数4<br>|Z<sub>4<sub>|0|1|2|3|<br>|:–:|:–:|:–:|:–:|:–:|<br>|0|0|0|0|0|<br>|1|0|1|2|3|<br>|2|0|2|0|2|<br>|3|0|3|2|1|</sub></sub></p><p>由于4不是素数，所以只有gcd(x,4)=1的有逆元：<br>此时0和2没有乘法逆元，而1的乘法逆元是1, 因为1×1=1. 3的乘法逆元是3, 因为3×3=1(行标和列标)</p><p>2).若取素数5：<br>|Z<sub>5<sub>|0|1|2|3|4|<br>|:–:|:–:|:–:|:–:|:–:|:–:|<br>|0|0|0|0|0|0|<br>|1|0|<strong>1</strong>|2|3|4|<br>|2|0|2|4|<strong>1</strong>|3|<br>|3|0|3|<strong>1</strong>|4|2|<br>|4|0|4|3|2|<strong>1</strong>|</sub></sub></p><p>此时1,2,3,4均有乘法逆元</p><p><strong>Q</strong>:乘法消去律,为什么一定要求要满足gcd(a,m)=1?<br><br><strong>A</strong>:模m的乘法运算返回的结果是0~(m-1)之间的数，如果乘数a和模数m有除1以外的共同因子,那么不会产生完整的余数集合.</p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h2 id=&quot;preparation&quot;&gt;&lt;a href=&quot;#preparation&quot; class=&quot;headerlink&quot; title=&quot;preparation&quot;&gt;&lt;/a&gt;preparation&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;加法消去律：如果(a+b)≡(a+c) m
-      
+      &lt;h2 id=&quot;preparation&quot;&gt;&lt;a href=&quot;#preparation&quot; class=&quot;headerlink&quot; title=&quot;preparation&quot;&gt;&lt;/a&gt;preparation&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;加法消去律：如果(a+b)≡(a+c) mod m, 则b ≡ c mod m&lt;br&gt;&lt;br&gt;乘法消去律：对于(a×b)≡(a×c) mod m，若gcd(a,m)=1，则b ≡ c mod m&lt;br&gt;&lt;br&gt;(a和m互素)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;逆元&quot;&gt;&lt;a href=&quot;#逆元&quot; class=&quot;headerlink&quot; title=&quot;逆元&quot;&gt;&lt;/a&gt;逆元&lt;/h3&gt;&lt;h4 id=&quot;1-加法逆元-x-y-0&quot;&gt;&lt;a href=&quot;#1-加法逆元-x-y-0&quot; class=&quot;headerlink&quot; title=&quot;1.加法逆元 x-y=0&quot;&gt;&lt;/a&gt;1.加法逆元 x-y=0&lt;/h4&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;Z&lt;sub&gt;4&lt;/sub&gt;&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;0&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;1&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;2&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;3&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;0&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;0&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;2&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;2&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;3&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;3&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;2&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;3&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;0&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;4&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;3&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;0&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;此时很清楚的看出来：&lt;br&gt;&lt;br&gt;1). (0+4)&lt;strong&gt;mod&lt;/strong&gt;4=0&lt;br&gt;&lt;br&gt;2). (2+2)&lt;strong&gt;mod&lt;/strong&gt;4=0&lt;br&gt;&lt;br&gt;3). (1+3)&lt;strong&gt;mod&lt;/strong&gt;4=0&lt;br&gt;&lt;br&gt;&lt;/p&gt;
     
     </summary>
     
@@ -45,9 +85,9 @@
     <link href="https://yoursugars.github.io/2018/09/18/%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95-%E5%90%8D%E8%AF%8D/"/>
     <id>https://yoursugars.github.io/2018/09/18/英语语法-名词/</id>
     <published>2018-09-18T08:08:42.000Z</published>
-    <updated>2018-09-20T09:57:05.647Z</updated>
+    <updated>2018-09-21T04:23:54.947Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="名词"><a href="#名词" class="headerlink" title="名词"></a>名词</h2><blockquote><p>用来修饰名词短语的是定语<br>定语分为前置定语(放在名词前面)和后置定语(放在名词后面)<br>在语言学上，汉语被称作”中心词在后”的语言(head-last language);英语被称为”中心词在前”的语言(head-first language)</p></blockquote><h3 id="“左二右六”的定语规律"><a href="#“左二右六”的定语规律" class="headerlink" title="“左二右六”的定语规律"></a>“左二右六”的定语规律</h3><p>黄金公式： 限定词+形容词+<strong>中心名词(headword)</strong>+六类右置定语(介词短语/分词短语/不定时短语/形容词短语/定语从句/同位语从句)<br><a id="more"></a></p><h3 id="名词的定义和分类"><a href="#名词的定义和分类" class="headerlink" title="名词的定义和分类"></a>名词的定义和分类</h3><table><thead><tr><th style="text-align:center">英文中文</th><th style="text-align:center">月份</th></tr></thead><tbody><tr><td style="text-align:center">公历</td><td style="text-align:center">the solar calendar</td></tr><tr><td style="text-align:center">农历</td><td style="text-align:center">the lunar calendar</td></tr></tbody></table><p>(e.g.七夕:the seventh of the seventh lunar month)</p><h3 id="名词的数"><a href="#名词的数" class="headerlink" title="名词的数"></a>名词的数</h3><blockquote><p>怎么说呢？关于区分一个名词在哪用作复数，在哪用作单数：遵循如果是总称的，抽象的概念则为不可数；如果表示的是不同种类的，具体的，则为可数。</p></blockquote><p>1.常用作不可数名词的名词：<br><br>  1).对于一些无法分割的名词，看作一个整体(air)<br>  2).一些因其组成部分太小而不易数的名词(corn)<br>  3).表示总称的名词(furniture)<br>  4).抽象的名词一般是不可数的(advice)<br>  5).表示研究学科，一般作为不可数名词(biology)</p><p>2.<strong>但是怎么说呢？可数和不可数具有相对性</strong><br> 1).对于物质名词或总称的名词，若是表示不同的种类，或者因为<strong>特定</strong>的意思，或是液体表示“几杯”这样的数量，则转化为可数名词。(paper:纸/a paper:一份报纸)<br> 2).对于抽象的名词，如果具体化了，可以转化为可数名词。(beauty/ a beauty)<br> 3).当一个名词表示抽象的、总称的概念，作为不可数名词来用，当它表示具体的，特定的事物，则通常用作可数名词<br> e.g.I pronounce this couple to be <strong>husband</strong> and <strong>wife</strong>.</p><p>3.不可数名词的度量<br> 1).常用piece修饰抽象名词<br>    e.g. a piece of news<br> 2).用bottle, cup, drop, glass修饰液体<br> 3).其他的量词:<br>    e.g.a loaf of bread/a slice of meat</p><h3 id="错题："><a href="#错题：" class="headerlink" title="错题："></a>错题：</h3><p>I had some interesting <strong>experiences</strong> during the journey.(特指经历)<br><br>He gained <strong>experience</strong> in dealing with such people.(某种经验)</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="名词"><a href="#名词" class="headerlink" title="名词"></a>名词</h2><blockquote><p>用来修饰名词短语的是定语<br>定语分为前置定语(放在名词前面)和后置定语(放在名词后面)<br>在语言学上，汉语被称作”中心词在后”的语言(head-last language);英语被称为”中心词在前”的语言(head-first language)</p></blockquote><h3 id="“左二右六”的定语规律"><a href="#“左二右六”的定语规律" class="headerlink" title="“左二右六”的定语规律"></a>“左二右六”的定语规律</h3><p>黄金公式： 限定词+形容词+<strong>中心名词(headword)</strong>+六类右置定语(介词短语/分词短语/不定时短语/形容词短语/定语从句/同位语从句)<br><a id="more"></a></p><h3 id="名词的定义和分类"><a href="#名词的定义和分类" class="headerlink" title="名词的定义和分类"></a>名词的定义和分类</h3><table><thead><tr><th style="text-align:center">英文中文</th><th style="text-align:center">月份</th></tr></thead><tbody><tr><td style="text-align:center">公历</td><td style="text-align:center">the solar calendar</td></tr><tr><td style="text-align:center">农历</td><td style="text-align:center">the lunar calendar</td></tr></tbody></table><p>(e.g.七夕:the seventh of the seventh lunar month)</p><h3 id="名词的数-可数与不可数"><a href="#名词的数-可数与不可数" class="headerlink" title="名词的数(可数与不可数)"></a>名词的数(可数与不可数)</h3><blockquote><p>怎么说呢？关于区分一个名词在哪用作复数，在哪用作单数：遵循如果是总称的，抽象的概念则为不可数；如果表示的是不同种类的，具体的，则为可数。这是一种<strong>意义</strong>上的区分</p></blockquote><p>1.常用作不可数名词的名词：<br><br>  1).对于一些无法分割的名词，看作一个整体(air)<br>  2).一些因其组成部分太小而不易数的名词(corn)<br>  3).表示总称的名词(furniture)<br>  4).抽象的名词一般是不可数的(advice)<br>  5).表示研究学科，一般作为不可数名词(biology)</p><p>2.<strong>但是怎么说呢？可数和不可数具有相对性</strong><br> 1).对于物质名词或总称的名词，若是表示不同的种类，或者因为<strong>特定</strong>的意思，或是液体表示“几杯”这样的数量，则转化为可数名词。(paper:纸/a paper:一份报纸)<br> 2).对于抽象的名词，如果具体化了，可以转化为可数名词。(beauty/ a beauty)<br> 3).当一个名词表示抽象的、总称的概念，作为不可数名词来用，当它表示具体的，特定的事物，则通常用作可数名词<br> e.g.I pronounce this couple to be <strong>husband</strong> and <strong>wife</strong>.</p><p>3.不可数名词的度量<br> 1).常用piece修饰抽象名词<br>    e.g. a piece of news<br> 2).用bottle, cup, drop, glass修饰液体<br> 3).其他的量词:<br>    e.g.a loaf of bread/a slice of meat</p><h4 id="错题："><a href="#错题：" class="headerlink" title="错题："></a>错题：</h4><p>I had some interesting <strong>experiences</strong> during the journey.(特指经历)<br><br>He gained <strong>experience</strong> in dealing with such people.(某种经验)</p><h3 id="名词的数-单数与复数"><a href="#名词的数-单数与复数" class="headerlink" title="名词的数(单数与复数)"></a>名词的数(单数与复数)</h3><blockquote><p>对于可数名词尚存一个变复数的问题，是一种<strong>形式</strong>上来总结可数名词的复数形式。</p></blockquote><h4 id="1-只用作单数的名词：不可数名词和专有名词。"><a href="#1-只用作单数的名词：不可数名词和专有名词。" class="headerlink" title="1.只用作单数的名词：不可数名词和专有名词。"></a>1.只用作单数的名词：不可数名词和专有名词。</h4><h4 id="2-只用于复数的名词："><a href="#2-只用于复数的名词：" class="headerlink" title="2.只用于复数的名词："></a>2.只用于复数的名词：</h4><p>(一)、“二合一的名词”<br> 1.工具和仪器：glasses(眼镜)、binoculars(双筒望远镜)<br> 2.服装：jeans(牛仔裤)、trousers(长裤)<br>(二)、“单形复义”的名词:people/cattle/police/poultry/livestock<br>(三)、”the+形容词”-表示一类人的复数名词<br>(四)、复数专有名词： The Himalayas </p><h4 id="3-变复数的规则："><a href="#3-变复数的规则：" class="headerlink" title="3.变复数的规则："></a>3.变复数的规则：</h4><p> (一)、一般在词尾加-s<br> (二)、以-s/-x/-ch/-sh结尾的名词加es<br> (三)、以”辅音字母+y”结尾的变-y为-i，再加-es;而以”元音字母+y”的直接加s<br> (四)、</p>]]></content>
     
     <summary type="html">
     
@@ -82,9 +122,9 @@
     <link href="https://yoursugars.github.io/2018/09/06/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-1/"/>
     <id>https://yoursugars.github.io/2018/09/06/操作系统-1/</id>
     <published>2018-09-06T03:01:06.000Z</published>
-    <updated>2018-09-08T06:58:43.668Z</updated>
+    <updated>2018-09-20T13:37:56.809Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="一、序论"><a href="#一、序论" class="headerlink" title="一、序论"></a>一、序论</h2><pre><code>&lt;!--more--&gt;</code></pre><h3 id="1-1-操作系统形成和发展"><a href="#1-1-操作系统形成和发展" class="headerlink" title="1.1.操作系统形成和发展"></a>1.1.操作系统形成和发展</h3><h4 id="1-操作系统"><a href="#1-操作系统" class="headerlink" title="1).操作系统:"></a>1).操作系统:</h4><pre><code>1.是运行在计算机上的第一层系统软件2.是对硬件的首次扩充。3.做&quot;硬件相关、应用无关&quot;的工作 </code></pre><h4 id="2-操作系统的发展"><a href="#2-操作系统的发展" class="headerlink" title="2).操作系统的发展"></a>2).操作系统的发展</h4><pre><code>1.联机批处理解决了人机矛盾2.脱机批处理解决了CPU的高速度与I/O设备的低速度之间的矛盾3.批处理系统节省了卫星机，实现了主机和通道、主机和外设的并行操作，系统负责用户的I/O传输，检查用户I/O命令的合法性。(遇错解决)**通道**：CPU把数据传输的功能下放给通道,通道和CPU分时使用内存，实现CPU与外设的并行工作(CPU发送一条通道命令，然后由通道和外设交换数据，之后CPU做其他的事情，通道和外设交换为数据后再向CPU汇报，CPU再处理)| 时间段 | 操作系统 || :-: | :-: ||联机批处理|联机操作：若CPU直接控制I/O操作||脱机批处理|脱机操作：由卫星机负责I/O工作||执行系统(批处理系统)|借助通道和中断技术，由主机控制I/O传输，负责作业的自动调度，负责提供I/O控制功能|</code></pre><h4 id="3-多道程序设计技术"><a href="#3-多道程序设计技术" class="headerlink" title="3).多道程序设计技术"></a>3).多道程序设计技术</h4><blockquote><p>解决：一个程序只需要CPU进行大量的计算时，外部设备就无事可做；而当一个程序需要大量的I/O传输时，CPU就不得不处于等待状态。</p></blockquote><pre><code>多道特点：1.主存中同时存放几道互相独立的程序          2.宏观上并行，微观上串行</code></pre><h4 id="4-分时技术"><a href="#4-分时技术" class="headerlink" title="4).分时技术"></a>4).分时技术</h4><pre><code>1.脱机操作方式：程序运行过程中不能直接实施控制，需预料到所有的问题和情况2.联机操作方式：用户能直接控制程序的运行分时技术可以使一台计算机同时为多个终端用户服务成为可能：将处理机时间划分成很短的时间片，轮流地分配各个用户程序使用。</code></pre><h3 id="1-2-操作系统的定义和特性"><a href="#1-2-操作系统的定义和特性" class="headerlink" title="1.2.操作系统的定义和特性"></a>1.2.操作系统的定义和特性</h3><pre><code>组成操作系统的软件包括：系统软件、应用软件和工具软件操作系统的宗旨：**提高计算机系统的效率、方便用户的使用**1).分时通过进程号、用户号标识多用户一定是多任务(Unix/Linux)多任务不一定是多用户(windows pro)2).**并发**：多个任务在一个时间段上同时做**共享**：并发必共享**不确定**：可以处理随机发生的多个事件**虚拟**：比裸机工作更强</code></pre><h3 id="1-3-中断及其处理"><a href="#1-3-中断及其处理" class="headerlink" title="1.3.中断及其处理"></a>1.3.中断及其处理</h3><blockquote><p>中断是指某个事件(例如电源掉电、定点加法溢出或者I/O传输结束)发生时，系统中止先行程序的运行、中断返回(由中断返回指令实现)这几个步骤。而中断过程是由一个中断信号引发的。</p></blockquote><p>中断过程：硬件实现的中断进入-&gt;软件的中断处理过程-&gt;中断返回(由中断返回指令实现)<br>而中断过程是由一个中断信号引发的。</p><pre><code>3).</code></pre>]]></content>
+    <content type="html"><![CDATA[<h2 id="一、序论"><a href="#一、序论" class="headerlink" title="一、序论"></a>一、序论</h2><pre><code>&lt;!--more--&gt;</code></pre><h3 id="1-1-操作系统形成和发展"><a href="#1-1-操作系统形成和发展" class="headerlink" title="1.1.操作系统形成和发展"></a>1.1.操作系统形成和发展</h3><h4 id="1-操作系统"><a href="#1-操作系统" class="headerlink" title="1).操作系统:"></a>1).操作系统:</h4><p> 1.是运行在计算机上的第一层系统软件<br> 2.是对硬件的首次扩充。<br> 3.做”硬件相关、应用无关”的工作 </p><h4 id="2-操作系统的发展"><a href="#2-操作系统的发展" class="headerlink" title="2).操作系统的发展"></a>2).操作系统的发展</h4><p>1.联机批处理解决了人机矛盾<br>2.脱机批处理解决了CPU的高速度与I/O设备的低速度之间的矛盾<br>3.批处理系统节省了卫星机，实现了主机和通道、主机和外设的并行操作，系统负责用户的I/O传输，检查用户I/O命令的合法性。(遇错解决)</p><p><strong>通道</strong>：CPU把数据传输的功能下放给通道,通道和CPU分时使用内存，实现CPU与外设的并行工作(CPU发送一条通道命令，然后由通道和外设交换数据，之后CPU做其他的事情，通道和外设交换为数据后再向CPU汇报，CPU再处理)</p><table><thead><tr><th style="text-align:center">时间段</th><th style="text-align:center">操作系统</th></tr></thead><tbody><tr><td style="text-align:center">联机批处理</td><td style="text-align:center">联机操作：若CPU直接控制I/O操作</td></tr><tr><td style="text-align:center">脱机批处理</td><td style="text-align:center">脱机操作：由卫星机负责I/O工作</td></tr><tr><td style="text-align:center">执行系统(批处理系统)</td><td style="text-align:center">借助通道和中断技术，由主机控制I/O传输，负责作业的自动调度，负责提供I/O控制功能</td></tr><tr><td style="text-align:center"></td></tr></tbody></table><h4 id="3-多道程序设计技术"><a href="#3-多道程序设计技术" class="headerlink" title="3).多道程序设计技术"></a>3).多道程序设计技术</h4><blockquote><p>为了解决：一个程序只需要CPU进行大量的计算时，外部设备就无事可做；而当一个程序需要大量的I/O传输时，CPU就不得不处于等待状态。</p></blockquote><p><strong>多道程序设计是在计算机主存中同时存放几道相互独立的程序，它们在操作系统的控制下，相互穿插地运行。当某种程序因为某种原因不能运行下去时(等待外部设备传输)，操作系统将另一道程序投入运行。(使CPU和各种外部设备尽可能地并行操作，从而提高计算机的使用效率)</strong><br>多道特点：1.主存中同时存放几道互相独立的程序<br>         2.宏观上并行，微观上串行</p><h4 id="4-分时技术"><a href="#4-分时技术" class="headerlink" title="4).分时技术"></a>4).分时技术</h4><p>  1.脱机操作方式：程序运行过程中不能直接实施控制，需预料到所有的问题和情况<br>  2.联机操作方式：用户能直接控制程序的运行</p><p> 分时技术可以使一台计算机同时为多个终端用户服务成为可能：将处理机时间划分成很短的时间片，轮流地分配各个用户程序使用。</p><h3 id="1-2-操作系统的定义和特性"><a href="#1-2-操作系统的定义和特性" class="headerlink" title="1.2.操作系统的定义和特性"></a>1.2.操作系统的定义和特性</h3><p>组成操作系统的软件包括：系统软件、应用软件和工具软件<br>操作系统的宗旨：<strong>提高计算机系统的效率、方便用户的使用</strong></p><p>1).分时通过进程号、用户号标识<br>多用户一定是多任务(Unix/Linux)<br>多任务不一定是多用户(windows pro)</p><p>2).<br>  <strong>并发</strong>：多个任务在一个时间段上同时做<br>  <strong>共享</strong>：并发必共享<br>  <strong>不确定</strong>：可以处理随机发生的多个事件<br>  <strong>虚拟</strong>：比裸机工作更强</p><h3 id="1-3-中断及其处理"><a href="#1-3-中断及其处理" class="headerlink" title="1.3.中断及其处理"></a>1.3.中断及其处理</h3><blockquote><p>中断是指某个事件(例如电源掉电、定点加法溢出或者I/O传输结束)发生时，系统中止先行程序的运行、中断返回(由中断返回指令实现)这几个步骤。而中断过程是由一个中断信号引发的。</p></blockquote><p>中断过程：硬件实现的中断进入-&gt;软件的中断处理过程-&gt;中断返回(由中断返回指令实现)<br>而中断过程是由一个中断信号引发的。</p><p>3).</p>]]></content>
     
     <summary type="html">
     
